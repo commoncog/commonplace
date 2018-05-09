@@ -1,0 +1,247 @@
+@import './fontawesome-all.min.css';
+@import '~foundation-sites/scss/foundation';
+@import '~foundation-sites/scss/util/util';
+@import './_settings.scss';
+// @import '~foundation-sites/scss/motioncd -ui';
+@include foundation-everything(false); // false is to turn off the flexbox grid, and use the old grid
+
+@font-face {font-family: 'Calluna';src: url('../fonts/Calluna.eot');src: url('../fonts/Calluna.eot?#iefix') format('embedded-opentype'),url('../fonts/Calluna.woff2') format('woff2'),url('../fonts/Calluna.woff') format('woff'),url('../fonts/Calluna.ttf') format('truetype');}
+@font-face {font-family: 'Lato';src: url('../fonts/Lato.eot');src: url('../fonts/Lato.eot?#iefix') format('embedded-opentype'),url('../fonts/Lato.woff2') format('woff2'),url('../fonts/Lato.woff') format('woff'),url('../fonts/Lato.ttf') format('truetype');}
+
+// Variables
+$yellowbg: #fffced;
+$orange: #f2e6b1;
+$fadedblue: #eff3fc;
+$darkblue: #2351b9;
+$fadedpurple : #f7eef4;
+$deeppurple: #5D2AB2;
+$deeperpurple: #472089;
+$superdarkpurple: #3c1053;
+
+$sanserif: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+$serif: 'Calluna', Georgia, serif;
+
+// Globals
+body {
+  font-family: 'Calluna', Georgia, serif;
+}
+p, li, blockquote { 
+  @include breakpoint(medium up) {
+    font-size: 1.15rem;
+  }
+
+  @include breakpoint(small) {
+    font-size: 1rem;
+  }
+}
+img[src$="#full"] { // Hack for full width images
+  position: relative;
+  
+  @include breakpoint(medium down) {
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw); 
+  }
+  @include breakpoint(large up) {
+    max-width: rem-calc(1000);
+    left: 35%;
+    transform: translateX(-25%);
+  }
+  @media screen and (min-width: 64em) and (max-width: 65em) {
+    max-width: rem-calc(1000);
+    left: 33%;
+    transform: translateX(-25%);
+  }
+    @include breakpoint(xlarge up) {
+    max-width: rem-calc(1000);
+    left: 40%;
+    transform: translateX(-25%);
+  }
+
+}
+blockquote, blockquote p, blockquote li {
+  color: $black;
+}
+blockquote {
+  padding-top: 1rem;
+  background-color: $yellowbg;
+  border: solid $orange;
+  border-width: 0 1px 1px 0;
+  @include breakpoint(medium up) {
+    margin-left: 1.5rem;
+  }
+}
+@mixin pullquote {
+  color: map-get($foundation-palette, primary);
+  font-style: italic;
+  line-height: 120%;
+  display: block;
+  @include breakpoint(medium up) {
+    width: 50%;
+    font-size: 1.8rem;
+    padding: 1rem 0.2rem 1rem 0.2rem;
+  }
+  @include breakpoint(small) {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 0 0.2rem 2rem 0.2rem;
+  }
+}
+.pullquote-l {
+  float: left;
+  @include breakpoint(medium up) {
+    margin-right: 2rem;
+    margin-left: -20%;
+  }
+  @include pullquote;
+}
+.pullquote-r {
+  float: right;
+  @include breakpoint(medium up) {
+    margin-left: 2rem;
+    margin-right: -20%;
+  }
+  @include pullquote;
+}
+
+.pullquote-l img, .pullquote-r img {
+  max-width: 300px;
+}
+
+// Used when we need a full-width background or containing div.
+.full-width {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: initial;
+}
+.clear { clear: both; }
+
+// Headings
+h1, h2, h3, h4, h5 { 
+  font-family: 'Calluna', Georgia, serif;
+  line-height: 120%;
+}
+
+// Header
+.header {
+ background: linear-gradient(to bottom left,#ba77b1,#5d2ab2);
+ margin-bottom: 2rem;
+ border-bottom: 1px solid $deeperpurple;
+}
+.header__logo__img {
+  height: 90px;
+  padding: 25px 15px;
+}
+
+// Post Styles
+.post {
+  margin-bottom: 2rem;
+}
+.post-header {
+  margin-bottom: 0.5rem;
+}
+.post-header__title-link {
+  color: $black;
+  &:hover {
+    color: map-get($foundation-palette, primary);
+  }
+  &:active {
+    color: $black;
+  }
+}
+.post-header__meta {
+  font: 0.8rem $sanserif;
+}
+.post-header__title {
+  margin-bottom: 0;
+}
+
+// Post Page styles
+.post-page-header {
+  margin-bottom: 2rem;
+}
+.post-page-header__title {
+  margin-top: 0.5rem;
+}
+.post-page-header__tag-bar {
+  font: 0.8rem $sanserif;
+  font-style: italic;
+  text-transform: uppercase;
+}
+.post-page-header__tag-bar a {
+  color: $superdarkpurple;
+  &:hover {
+    color: $deeppurple;
+  }
+} 
+.post-page-header__metadata-bar {
+  font-family: $sanserif;
+  color: $dark-gray;
+  font-size: 0.8rem;
+}
+.post-page-content {
+  @include breakpoint(medium up) {
+    h1, h2, h3, h4, h5, h6 { margin-bottom: 0.9rem; }
+    h1 { font-size: 36px; }
+    h2 { font-size: 30px; }
+    h3 { font-size: 24px; }
+    h4 { font-size: 20px; }
+    h5 { font-size: 18px; }
+    h6 { font-size: 16px; }
+  }
+}
+
+// Sidebar
+.sidebar__heading {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: #666;
+  text-transform: uppercase;
+  font-family: $sanserif;
+}
+.sidebar__desc_p {
+  font-size: 0.95rem;
+  line-height: 120%;
+  font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+}
+
+// Nav
+.sidebar__nav {
+  margin-top: 1.5rem;
+}
+.sidebar__nav__ul {
+  list-style: none;
+  margin-left: 0;
+  font: 0.96rem 'Lato', 'Helvetica Neue', Arial, sans-serif;
+}
+
+@mixin sidebar-li-styles {
+  font-size: 1rem;
+  border-bottom: 1px dotted #ccc;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.7rem;
+}
+.sidebar__nav__li {
+  @include sidebar-li-styles;
+}
+.sidebar__nav__li--active {
+  @include sidebar-li-styles;
+  color: $deeppurple;
+}
+
+.sidebar__social {
+  margin-top: 1.5rem;
+}
+.sidebar__social__ul {
+  list-style: none;
+  margin-left: 0;
+}
+.sidebar__social__li {
+  margin-right: 5px;
+  display: inline-block;
+}
+.sidebar__social__li svg {
+  height: 1.2rem;
+  fill: $deeperpurple;
+}

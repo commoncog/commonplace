@@ -1,0 +1,10 @@
+<header class='row full-width header' {{#if @blog.cover_image}}style="background-image: url({{@blog.cover_image}}){{/if}}">
+  <div class='header__logo'>
+    {{#if @blog.logo}}
+      <a href='{{@blog.url}}'><img class="header__logo__img" src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+    {{else}}
+      {{@blog.title}}
+    {{/if}} 
+  </div>
+  <div class='header__right'></div>
+  </header>
