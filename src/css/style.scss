@@ -26,13 +26,7 @@ body {
   font-family: 'Calluna', Georgia, serif;
 }
 p, li, blockquote { 
-  @include breakpoint(medium up) {
-    font-size: 1.15rem;
-  }
-
-  @include breakpoint(small) {
-    font-size: 1rem;
-  }
+    font-size: 1.2rem;
 }
 img[src$="#full"] { // Hack for full width images
   position: relative;
@@ -48,7 +42,7 @@ img[src$="#full"] { // Hack for full width images
     transform: translateX(-25%);
   }
   @media screen and (min-width: 64em) and (max-width: 65em) {
-    max-width: rem-calc(1000);
+    max-width: 85vw;
     left: 33%;
     transform: translateX(-25%);
   }
@@ -79,12 +73,12 @@ blockquote {
   @include breakpoint(medium up) {
     width: 50%;
     font-size: 1.8rem;
-    padding: 1rem 0.2rem 1rem 0.2rem;
+    padding: 1rem 0.2rem 1rem;
   }
   @include breakpoint(small) {
     width: 100%;
-    font-size: 1.2rem;
-    padding: 0 0.2rem 2rem 0.2rem;
+    font-size: 1.4rem;
+    padding: 1rem 0.2rem 2rem;
   }
 }
 .pullquote-l {
@@ -105,7 +99,9 @@ blockquote {
 }
 
 .pullquote-l img, .pullquote-r img {
-  max-width: 300px;
+  @include breakpoint(small down) {
+    max-height: 150px;
+  }
 }
 
 // Used when we need a full-width background or containing div.
@@ -125,9 +121,12 @@ h1, h2, h3, h4, h5 {
 
 // Header
 .header {
- background: linear-gradient(to bottom left,#ba77b1,#5d2ab2);
+ background: linear-gradient(to bottom right,#754487,$superdarkpurple);
  margin-bottom: 2rem;
  border-bottom: 1px solid $deeperpurple;
+}
+.header__logo {
+  padding: 0px;
 }
 .header__logo__img {
   height: 90px;
@@ -137,6 +136,9 @@ h1, h2, h3, h4, h5 {
 // Post Styles
 .post {
   margin-bottom: 2rem;
+}
+.post__excerpt__p {
+  font-size: 1.1rem;
 }
 .post-header {
   margin-bottom: 0.5rem;
@@ -152,6 +154,7 @@ h1, h2, h3, h4, h5 {
 }
 .post-header__meta {
   font: 0.8rem $sanserif;
+  color: $dark-gray;
 }
 .post-header__title {
   margin-bottom: 0;
@@ -163,6 +166,7 @@ h1, h2, h3, h4, h5 {
 }
 .post-page-header__title {
   margin-top: 0.5rem;
+  font-style: italic;
 }
 .post-page-header__tag-bar {
   font: 0.8rem $sanserif;
@@ -190,9 +194,16 @@ h1, h2, h3, h4, h5 {
     h5 { font-size: 18px; }
     h6 { font-size: 16px; }
   }
+  a { border-bottom: 1px dotted map-get($foundation-palette, primary); }
 }
 
 // Sidebar
+.sidebar {
+  @include breakpoint(medium down) {
+    border-top: 1px solid $medium-gray;
+    padding-top: 2rem;
+  }
+}
 .sidebar__heading {
   font-size: 0.9rem;
   margin-bottom: 1rem;
@@ -233,15 +244,70 @@ h1, h2, h3, h4, h5 {
 .sidebar__social {
   margin-top: 1.5rem;
 }
-.sidebar__social__ul {
+
+// Social bar
+.social__ul {
   list-style: none;
   margin-left: 0;
+  margin-bottom: 0;
 }
-.sidebar__social__li {
+.social__li {
   margin-right: 5px;
   display: inline-block;
 }
-.sidebar__social__li svg {
+.social__li svg {
   height: 1.2rem;
   fill: $deeperpurple;
 }
+
+// Footer
+.footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid #d9a7c7;
+  background: linear-gradient(to bottom left,#fffced,#edd6e5);
+  box-shadow: 0 50vh 0 50vh #edd6e5;
+  font-family: $sanserif;
+}
+.footer__heading {
+  font-family: $sanserif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: $dark-gray;
+}
+.footer__tags {
+  list-style: none;
+  margin-left: 0;
+}
+.footer__tags__li {
+  font-size: 0.9rem;
+  font-family: $sanserif;
+  margin-bottom: 0.3rem;
+}
+.footer__copyright {
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+.footer__theme-credit {
+  color: $dark-gray;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  line-height: 120%;
+}
+.footer__theme-credit__a {
+  color: $dark-gray;
+}
+.footer__latest {
+  list-style: none;
+  margin-left: 0; 
+}
+.footer__latest__li {
+  font-size: 0.9rem;
+  font-family: $sanserif;
+  border-bottom: 1px dotted $dark-gray;
+  margin-bottom: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+

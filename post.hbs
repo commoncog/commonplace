@@ -1,21 +1,22 @@
 {{!< default}}
 {{> header}}
 <div class='row'>
-{{#post}}
-  {{!<div class='small-12 medium-8 medium-offset-2 large-10 large-offset-1 end columns'>
-  </div>}}
-  <div class='small-12 medium-8 medium-offset-2 medium-end large-6 large-offset-1 columns'>
-    <section class='post-page-header'>
+  {{#post}}
+    {{!<div class='small-12 medium-8 medium-offset-2 large-10 large-offset-1 end columns'>
+    </div>}}
+    <div class='small-12 medium-8 medium-offset-2 large-6 large-offset-1 columns'>
+      <section class='post-page-header'>
       <span class='post-page-header__tag-bar'>{{tags separator=", "}}</span>
       <h1 class="post-page-header__title">{{title}}</h1>
       <span class='post-page-header__metadata-bar'>By {{author}} &middot; <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></span>
-    </section>
-    <section class='post-page-content'>
+      </section>
+      <section class='post-page-content'>
       {{ content }}
-    </section>
+      </section>
+    </div>
+  {{/post}}
+  <div class='small-12 medium-8 medium-offset-2 large-3 large-offset-1 end columns'>
+    {{> "sidebar"}}
   </div>
-{{/post}}
-<div class='small-12 medium-10 medium-offset-2 large-3 large-offset-1 end columns'>
-  {{> "sidebar"}}
 </div>
-</div>
+{{> footer}}

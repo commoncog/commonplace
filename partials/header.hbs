@@ -1,10 +1,12 @@
-<header class='row full-width header' {{#if @blog.cover_image}}style="background-image: url({{@blog.cover_image}}){{/if}}">
-  <div class='header__logo'>
-    {{#if @blog.logo}}
-      <a href='{{@blog.url}}'><img class="header__logo__img" src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
-    {{else}}
-      {{@blog.title}}
-    {{/if}} 
+<header class='full-width header' {{#if @blog.cover_image}}style="background-image: url({{@blog.cover_image}}){{/if}}">
+  <div class='row'>
+    <div class='header__logo small-4 small-collapse medium-offset-2 medium-3 medium-collapse large-offset-1 large-2 large-collapse columns'>
+      {{#if @blog.logo}}
+        <a href='{{@blog.url}}'><img class="header__logo__img" src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+      {{else}}
+        {{@blog.title}}
+      {{/if}} 
+    </div>
+    <div class='header__right'></div>
   </div>
-  <div class='header__right'></div>
-  </header>
+</header>
