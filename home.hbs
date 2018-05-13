@@ -1,0 +1,87 @@
+{{!< default}}
+{{> header}}
+
+{{#get "posts" filter="tag:-[books]" limit=@config.posts_per_page as |normal_posts|}}
+<div class='row'>
+  <div class='small-12 medium-8 medium-offset-2 large-6 large-offset-1 columns'>
+      {{#foreach normal_posts limit="1"}}
+        <article class="{{post_class}} post">
+        {{#if feature_image}}
+          <a href='{{url}}'><img class="post-header__feature-img" src="{{img_url feature_image}}"/></a>
+        {{/if}}
+        <h2 class="post-header__title"><a class="post-header__title-link" href="{{url}}">{{{title}}}</a></h2>
+        <p class="post__excerpt__p-hero">{{excerpt}}</p>
+        <hr class='home__hr'/>
+        </article>
+      {{/foreach}}
+      {{#foreach normal_posts from="2" to="3"}}
+        <article class="{{post_class}} post">
+          <div class='row'>
+          {{#if feature_image}}
+            <section class='small-4 columns'>
+            <a href='{{url}}'><img class="post-header__feature-img--secondary" src="{{img_url feature_image}}"/></a>
+            </section>
+            <section class='small-8 columns'>
+            <h2 class="post-header__title--secondary"><a class="post-header__title-link" href="{{url}}">{{{title}}}</a></h2>
+            <p class="post__excerpt__p">{{excerpt words="15"}}{{#unless custom_excerpt}}&hellip;{{/unless}}</p>
+              </section>
+              {{ else }}
+              <section class='small-12 columns'>
+              <h2 class="post-header__title--secondary"><a class="post-header__title-link" href="{{url}}">{{{title}}}</a></h2>
+              <p class="post__excerpt__p">{{excerpt words="15"}}{{#unless custom_excerpt}}&hellip;{{/unless}}</p>
+                </section>
+          {{/if}}
+          </div>{{!row}}
+          {{#unless @last}}<hr class='home__hr'/>{{/unless}}
+        </article>
+      {{/foreach}}
+    </div>
+    <div class='small-12 medium-8 medium-offset-2 large-3 large-offset-1 end columns show-for-large'>
+      {{> sidebar}}
+    </div>
+</div>
+{{#get "posts" filter="tag:[books]" limit="4" as |books|}}
+<div class='row'>
+  <div class='small-12 columns'>
+    <h2 class='home__books-section-heading'><a class="home__books-section-heading__a" href="/tag/books">Book&nbsp;&nbsp;Summaries</a></h2>
+  </div>
+</div>
+<div class='row home__books'>
+  {{#foreach books}}
+    <div class='small-12 medium-6 large-3 columns'>
+      <a href='{{url}}'><img class="home__books-img" src="{{img_url feature_image}}"/></a>
+      <h3 class="home__books-header"><a class="home__books-link" href="{{url}}">{{{title}}}</a></h3>
+            <p class="home__books-excerpt">{{excerpt words="20"}}{{#unless custom_excerpt}}&hellip;{{/unless}}</p>
+    </div>
+  {{/foreach}}
+</div>
+{{/get}}
+<div class='row'>
+  <div class='small-12 medium-8 medium-offset-2 large-6 large-offset-1 end columns'>
+    {{#foreach normal_posts from="4"}}
+      <article class="{{post_class}} post">
+        <div class='row'>
+        {{#if feature_image}}
+          <section class='small-4 columns'>
+            <a href='{{url}}'><img class="post-header__feature-img--secondary" src="{{img_url feature_image}}"/></a>
+          </section>
+          <section class='small-8 columns'>
+            <h2 class="post-header__title--secondary"><a class="post-header__title-link" href="{{url}}">{{{title}}}</a></h2>
+            <p class="post__excerpt__p">{{excerpt words="15"}}{{#unless custom_excerpt}}&hellip;{{/unless}}</p>
+            </section>
+        {{else}}
+          <section class='small-12 columns'>
+            <h2 class="post-header__title--secondary"><a class="post-header__title-link" href="{{url}}">{{{title}}}</a></h2>
+            <p class="post__excerpt__p">{{excerpt words="15"}}{{#unless custom_excerpt}}&hellip;{{/unless}}</p>
+          </section>
+        {{/if}}
+        </div>{{!row}}
+        {{#unless @last}}<hr class='home__hr'/>{{/unless}}
+      </article>
+    {{/foreach}} 
+    {{ pagination }}
+  </div>
+</div>
+{{/get}}
+    
+{{> footer}}

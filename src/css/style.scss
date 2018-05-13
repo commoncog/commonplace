@@ -27,9 +27,11 @@ body {
 }
 p, li, blockquote { 
     font-size: 1.2rem;
+    margin-bottom: 1.2rem;
 }
 img[src$="#full"] { // Hack for full width images
   position: relative;
+  margin-bottom: 1.2rem;
   
   @include breakpoint(medium down) {
     max-width: 100vw;
@@ -121,7 +123,7 @@ h1, h2, h3, h4, h5 {
 
 // Header
 .header {
- background: linear-gradient(to bottom right,#754487,$superdarkpurple);
+ background: linear-gradient(to bottom right,#894f9e,$superdarkpurple);
  margin-bottom: 2rem;
  border-bottom: 1px solid $deeperpurple;
 }
@@ -133,15 +135,64 @@ h1, h2, h3, h4, h5 {
   padding: 25px 15px;
 }
 
+// Home styles
+.home__books {
+  border-bottom: 1px solid $light-gray;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 4rem;
+}
+.home__books-section-heading {
+  font-family: $sanserif;
+  color: $dark-gray;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+.home__books-section-heading__a {
+  color: $dark-gray;
+  border-bottom: 1px dotted $medium-gray;
+  &:hover {
+    color: $black;
+  }
+}
+.home__books-img {
+  max-height: 200px;
+  display: block;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  border: 1px solid $light-gray;
+}
+.home__books-header{
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+.home__books-excerpt {
+  font-size: 0.9rem;
+  line-height: 120%;
+}
+.home__hr {
+  border-bottom: 1px dotted $medium-gray;
+}
+
 // Post Styles
 .post {
   margin-bottom: 2rem;
 }
 .post__excerpt__p {
+  font-size: 1rem;
+}
+.post__excerpt__p-hero {
   font-size: 1.1rem;
 }
 .post-header {
   margin-bottom: 0.5rem;
+}
+.post-header__feature-img {
+  margin-bottom: 1rem;
+}
+.post-header__title {
+  font-size: 30px;
 }
 .post-header__title-link {
   color: $black;
@@ -159,6 +210,11 @@ h1, h2, h3, h4, h5 {
 .post-header__title {
   margin-bottom: 0;
 }
+.post-header__title--secondary {
+  font-size: 25px;
+  margin-bottom: 0.2rem;
+  display: inline-block;
+}
 
 // Post Page styles
 .post-page-header {
@@ -167,6 +223,8 @@ h1, h2, h3, h4, h5 {
 .post-page-header__title {
   margin-top: 0.5rem;
   font-style: italic;
+  line-height: 120%;
+  font-size: 2.5rem;
 }
 .post-page-header__tag-bar {
   font: 0.8rem $sanserif;
@@ -183,18 +241,28 @@ h1, h2, h3, h4, h5 {
   font-family: $sanserif;
   color: $dark-gray;
   font-size: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 .post-page-content {
   @include breakpoint(medium up) {
     h1, h2, h3, h4, h5, h6 { margin-bottom: 0.9rem; }
     h1 { font-size: 36px; }
     h2 { font-size: 30px; }
-    h3 { font-size: 24px; }
-    h4 { font-size: 20px; }
+    h3 { font-size: 25px; }
+    h4 { font-size: 21px; }
     h5 { font-size: 18px; }
     h6 { font-size: 16px; }
   }
   a { border-bottom: 1px dotted map-get($foundation-palette, primary); }
+  img { margin-bottom: 1.2rem; }
+}
+
+// Pagination
+.paginate__newer {
+  float: left;
+}
+.paginate__older {
+  float: right;
 }
 
 // Sidebar
