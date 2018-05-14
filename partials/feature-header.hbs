@@ -1,4 +1,4 @@
-<header class='full-width header' {{#if @blog.cover_image}}style="background-image: url({{@blog.cover_image}}){{/if}}">
+<header class='full-width header--feature' {{#if feature_image}}style='background-image: url({{img_url feature_image}})'{{/if}}>
   <div class='row'>
     <div class='header__logo small-4 medium-offset-2 medium-3 large-offset-1 large-2 columns'>
       {{#if @blog.logo}}
@@ -15,6 +15,13 @@
         <a href='/subscribe' class='button btn--white--hollow'>Subscribe</a>
       {{/is}}
       {{/if}}
+    </div>
+  </div<!--row-->
+  <div class='row'>
+    <div class='small-12 medium-8 medium-offset-2 columns header--feature__title-box'>
+      <span class='header--feature__tag-bar'>{{tags separator=", "}}</span>
+      <h1 class='header--feature__heading'>{{title}}</h1> 
+      <div class='header--feature__metadata-bar'>By {{author}} &middot; <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></div>
     </div>
   </div>
 </header>

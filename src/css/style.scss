@@ -26,10 +26,15 @@ body {
   font-family: 'Calluna', Georgia, serif;
 }
 p, li, blockquote { 
-    font-size: 1.2rem;
-    margin-bottom: 1.2rem;
+  font-size: 1.2rem;
 }
-img[src$="#full"] { // Hack for full width images
+p, blockquote {
+  margin-bottom: 1.2rem;
+}
+li {
+  margin-bottom: 1rem;
+}
+.post-page-content img[src$="#full"] { // Hack for full width images
   position: relative;
   margin-bottom: 1.2rem;
   
@@ -53,7 +58,13 @@ img[src$="#full"] { // Hack for full width images
     left: 40%;
     transform: translateX(-25%);
   }
-
+}
+.post-page-content--feature img[src$="#full"] {
+  @include breakpoint(small up) {
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw); 
+  }
 }
 blockquote, blockquote p, blockquote li {
   color: $black;
@@ -99,11 +110,27 @@ blockquote {
   }
   @include pullquote;
 }
-
 .pullquote-l img, .pullquote-r img {
   @include breakpoint(small down) {
     max-height: 150px;
   }
+}
+.btn--white--hollow {
+  border-color: #fff;
+  color: #fff;
+  background-color: transparent;
+  font-family: $sanserif;
+  &:hover, &:active {
+    color: #ccc;
+    border-color: #ccc;
+    background-color: transparent;
+  }
+  &:visited, &:focus {
+    background-color: transparent;
+  }
+}
+.button {
+  font-family: $sanserif;
 }
 
 // Used when we need a full-width background or containing div.
@@ -134,13 +161,57 @@ h1, h2, h3, h4, h5 {
   height: 90px;
   padding: 25px 15px;
 }
+.header__right {
+  padding-top: 25px;
+  text-align: right;
+}
+.header--feature {
+  background: linear-gradient(to bottom right,#894f9e,$superdarkpurple);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 20vh;
+  margin-bottom: 3rem;
+}
+.header--feature__title-box {
+  background-color: rgba(0,0,0,0.6);
+  padding: 15px;
+  margin-top: 10%;
+}
+.header--feature__heading {
+  color: $white;
+  font-size: 3.1rem;
+  margin-top: 0.5rem;
+}
+.header--feature__tag-bar a {
+  color: $light-gray;
+  &:hover {
+    color: $medium-gray;
+  }
+}
+.header--feature__metadata-bar {
+  color: $light-gray;
+  a {
+    color: $light-gray;
+    border-bottom: 1px dotted $light-gray;
+    &:hover {
+      color: $medium-gray;
+    }
+  }
+}
 
 // Home styles
 .home__books {
   border-bottom: 1px solid $light-gray;
   padding-top: 15px;
   padding-bottom: 15px;
-  margin-bottom: 4rem;
+  @include breakpoint(medium down) {
+    margin-bottom: 2rem;
+  }
+  @include breakpoint(large up) {
+    margin-bottom: 4rem;
+  }
 }
 .home__books-section-heading {
   font-family: $sanserif;
@@ -173,6 +244,54 @@ h1, h2, h3, h4, h5 {
 }
 .home__hr {
   border-bottom: 1px dotted $medium-gray;
+}
+
+// Subscribe box styles
+.subscribe-box {
+  background-color: $fadedpurple;
+  padding-top: 0.8rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+.subscribe-box__heading {
+  font-size: 1.5rem;
+  line-height: 110%;
+}
+.subscribe-box__p {
+  font-size: 0.9rem;
+  line-height: 120%;
+}
+
+// Index styles
+.index__meta_box {
+  border-bottom: 1px solid $medium-gray;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+}
+.tag-index__desc-heading {
+  font-style: italic;
+  color: $dark-gray;
+  display: inline-block;
+}
+.author-index__bio {
+  font-style: italic;
+}
+.author-index__profile-img {
+  float: right;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 100px;
+}
+.author-index__links-bar {
+  color: $dark-gray;
+  margin-bottom: 1rem;
+
+  a {
+    color: $dark-gray;
+    &:hover {
+      color: $black;
+    }
+  }
 }
 
 // Post Styles
@@ -255,6 +374,93 @@ h1, h2, h3, h4, h5 {
   }
   a { border-bottom: 1px dotted map-get($foundation-palette, primary); }
   img { margin-bottom: 1.2rem; }
+}
+.post-page-content--feature {
+  margin-bottom: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @include breakpoint(medium only) {
+  h1, h2, h3, h4, h5, h6 { margin-bottom: 0.9rem; }
+    h1 { font-size: 36px; }
+    h2 { font-size: 30px; }
+    h3 { font-size: 25px; }
+    h4 { font-size: 21px; }
+    h5 { font-size: 18px; }
+    h6 { font-size: 16px; }
+  }
+  @include breakpoint(large up) {
+    p, blockquote { 
+      font-size: 1.4rem; 
+      margin-bottom: 1.3rem;
+    }
+    li {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+  }
+  a { border-bottom: 1px dotted map-get($foundation-palette, primary); }
+  img { margin-bottom: 1.2rem; }
+}
+.post-page__bottom-meta {
+  @include breakpoint(large up) {
+    margin-top: 3rem;
+  }
+}
+.post-page__related {
+  margin-bottom: 2rem;
+}
+.post-page__related__heading {
+  border-top: 3px solid $fadedpurple;
+  font-size: 2rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  padding-top: 15px;
+}
+.post-page__related__ul {
+  list-style: none;
+  margin-left: 0;
+}
+.post-page__related__li {
+  margin-bottom: 0.5rem;
+  padding-bottom: 5px;
+  border-bottom: 1px dotted $medium-gray;
+}
+@mixin post-page-nextprev {
+  min-height: 6rem;
+}
+.post-page__next-prev--left {
+  padding-left: 0;
+  height: 100%;
+  @include post-page-nextprev;
+}
+.post-page__next-prev--right {
+  padding-right: 0;
+  height: 100%;
+  border-left: 1px solid $light-gray;
+  @include post-page-nextprev;
+  @include breakpoint(medium up) {
+    text-align: right;
+  }
+}
+.post-page__next-prev__heading {
+  font-size: 1.2rem;
+}
+.post-page__next-prev__subheading {
+  text-transform: uppercase;
+  font: 0.8rem $sanserif;
+  color: $dark-gray;
+}
+
+// Post custom types
+.book-review__img {
+  max-width: 40%;
+  float: left;
+  border: 1px solid $light-gray;
+  margin-top: 1rem;
+  margin-left: -10%;
+  margin-right: 0.7rem;
+  margin-bottom: 0.5rem;
 }
 
 // Pagination
@@ -360,7 +566,6 @@ h1, h2, h3, h4, h5 {
 .footer__theme-credit {
   color: $dark-gray;
   font-size: 0.8rem;
-  margin-top: 1rem;
   line-height: 120%;
 }
 .footer__theme-credit__a {

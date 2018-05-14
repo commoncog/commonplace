@@ -1,20 +1,22 @@
 {{!< default}}
 {{> header}}
-{{#post}}
 <div class='row'>
+  {{#post}}
+    {{!<div class='small-12 medium-8 medium-offset-2 large-10 large-offset-1 end columns'>
+    </div>}}
     <div class='small-12 medium-8 medium-offset-2 large-6 large-offset-1 columns'>
       <section class='post-page-header'>
       <span class='post-page-header__tag-bar'>{{tags separator=", "}}</span>
       <h1 class="post-page-header__title">{{title}}</h1>
       <div class='post-page-header__metadata-bar'>By {{author}} &middot; <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></div>
-      {{#if feature_image}}<img src='{{img_url feature_image}}'/>{{/if}}
+      {{#if feature_image}}<img class='book-review__img' src='{{img_url feature_image}}'/>{{/if}}
       </section>
       <section class='post-page-content'>
       {{ content }}
       </section>
     </div>
   <div class='small-12 medium-8 medium-offset-2 large-3 large-offset-1 end columns'>
-    {{> sidebar}}
+    {{> "sidebar"}}
   </div>
 </div>
 <div class='row post-page__bottom-meta'>
@@ -38,19 +40,19 @@
         {{/get}}
       {{/if}}
     </div><!--row-->
-    <div class='row small-uncollapse'>
-      <div class='small-12 medium-6 columns post-page__next-prev--left'>
+    <div class='row'>
       {{#prev_post}}
-          <h4 class='post-page__next-prev__subheading'>Previous post</h4>
-          <h3 class='post-page__next-prev__heading'><a class='page-post__next-prev__a' href="{{url}}">&larr; {{title}}</a></h3>
+      <div class='small-12 medium-6 columns post-page__next-prev--left'>
+        <h4 class='post-page__next-prev__subheading'>Previous post</h4>
+        <h3 class='post-page__next-prev__heading'><a class='page-post__next-prev__a' href="{{url}}">&larr; {{title}}</a></h3>
+      </div>
       {{/prev_post}}
-      </div>
-      <div class='small-12 medium-6 columns post-page__next-prev--right'>
       {{#next_post}}
-          <h4 class='post-page__next-prev__subheading'>Next post</h4>
-          <h3 class='post-page__next-prev__heading'><a class='page-post__next-prev__a' href="{{url}}">{{title}} &rarr;</a></h3>
-      {{/next_post}}
+      <div class='small-12 medium-6 columns post-page__next-prev--right'>
+        <h4 class='post-page__next-prev__subheading'>Next post</h4>
+        <h3 class='post-page__next-prev__heading'><a class='page-post__next-prev__a' href="{{url}}">{{title}} &rarr;</a></h3>
       </div>
+      {{/next_post}}
     </div><!--row-->
   </div>
 </div>
@@ -64,3 +66,4 @@
   });
 </script>
 {{/contentFor}}
+
