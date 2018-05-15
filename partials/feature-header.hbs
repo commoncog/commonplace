@@ -10,9 +10,9 @@
     <div class='header__right small-4 small-offset-4 medium-2 medium-offset-3 large-4 large-offset-4 end columns'>
       {{#if @labs.subscribers}}
       {{#is "home, post"}} 
-        <a href='#subscribe' class='button btn--white--hollow'>Subscribe</a>
+        <a href='#subscribe' class='button btn--white--hollow'>{{t "Subscribe"}}</a>
       {{else}}
-        <a href='/subscribe' class='button btn--white--hollow'>Subscribe</a>
+        <a href='/subscribe' class='button btn--white--hollow'>{{t "Subscribe"}}</a>
       {{/is}}
       {{/if}}
     </div>
@@ -21,7 +21,7 @@
     <div class='small-12 medium-8 medium-offset-2 columns header--feature__title-box'>
       <span class='header--feature__tag-bar'>{{tags separator=", "}}</span>
       <h1 class='header--feature__heading'>{{title}}</h1> 
-      <div class='header--feature__metadata-bar'>By {{author}} &middot; <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></div>
+      <div class='header--feature__metadata-bar'>{{t "By"}} {{author}} &middot; <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></div>
     </div>
   </div>
 </header>

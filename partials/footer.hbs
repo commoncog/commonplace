@@ -1,7 +1,7 @@
 <footer class='footer full-width'>
 <div class='row'>
   <section class='small-12 medium-offset-2 medium-2 large-offset-1 large-2 columns'>
-  <h2 class='footer__heading'>Categories</h2>
+  <h2 class='footer__heading'>{{t "Categories"}}</h2>
   <ul class='footer__tags'> 
     {{#get "tags"}}
       {{#foreach tags}}
@@ -14,7 +14,7 @@
   </section>
 
   <section class='small-12 medium-3 columns'>
-  <h2 class='footer__heading'>Latest</h2>
+  <h2 class='footer__heading'>{{t "Latest"}}</h2>
   <ul class='footer__latest'>
     {{#get "posts" limit="3" filter="tags:-[books]" as |latest_posts|}}
     {{#foreach latest_posts}}
@@ -25,7 +25,7 @@
   </section>
   
   <section class='small-12 medium-2 end columns'>
-  <h2 class='footer__heading'>Colophon</h2>
+  <h2 class='footer__heading'>{{t "Colophon"}}</h2>
   <section class='footer__copyright'><a href='{{@blog.url}}'>{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
   <ul class='social__ul'>
     {{#if @blog.facebook}}
@@ -36,7 +36,7 @@
     {{/if}}
     <li class='social__li'><a href="https://feedly.com/i/subscription/feed/{{@blog.url}}/rss/" target="_blank" rel="noopener">{{> "icons/rss"}}</a></li>
   </ul>
-  <p class='footer__theme-credit'>Published using <a class='footer__theme-credit__a' href='https://commoncog.com/blog/commonplace-theme'>Commonplace</a>, powered by <a class='footer__theme-credit__a' href='https://ghost.org'>Ghost</a></p>
+  <p class='footer__theme-credit'>{{t "Published using"}} <a class='footer__theme-credit__a' href='https://commoncog.com/blog/commonplace-theme'>Commonplace</a>, {{t "powered by"}} <a class='footer__theme-credit__a' href='https://ghost.org'>Ghost</a></p>
   </section>
 </div>
 </footer>

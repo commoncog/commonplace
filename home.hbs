@@ -40,10 +40,12 @@
       {{> sidebar}}
     </div>
 </div>
+{{!-- CHANGE this filter to filter for the category you'd like --}}
 {{#get "posts" filter="tag:[books]" limit="4" as |books|}}
 <div class='row'>
   <div class='small-12 columns'>
-    <h2 class='home__books-section-heading'><a class="home__books-section-heading__a" href="/tag/books">Book&nbsp;&nbsp;Summaries</a></h2>
+    {{!-- CHANGE this url to "/tag/<tagname>" to link to the tag addres --}}
+    <h2 class='home__books-section-heading'><a class="home__books-section-heading__a" href="/tag/books">{{t "Book Summaries"}}</a></h2>
   </div>
 </div>
 <div class='row home__books'>
