@@ -10,7 +10,7 @@
           <a href='{{url}}'><img class="post-header__feature-img" src="{{img_url feature_image}}"/></a>
         {{/if}}
         <h2 class="post-header__title"><a class="post-header__title-link" href="{{url}}">{{{title}}}</a></h2>
-        <p class="post__excerpt__p-hero">{{excerpt}}</p>
+        <p class="post__excerpt__p-hero">{{excerpt words="15"}}{{#unless custom_excerpt}}&hellip;{{/unless}}</p>
         <hr class='home__hr'/>
         </article>
       {{/foreach}}
