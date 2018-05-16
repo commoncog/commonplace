@@ -170,7 +170,6 @@ h1, h2, h3, h4, h5 {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed;
   min-height: 20vh;
   margin-bottom: 3rem;
 }
@@ -377,8 +376,6 @@ h1, h2, h3, h4, h5 {
 }
 .post-page-content--feature {
   margin-bottom: 3rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
 
   @include breakpoint(medium only) {
   h1, h2, h3, h4, h5, h6 { margin-bottom: 0.9rem; }
@@ -390,6 +387,9 @@ h1, h2, h3, h4, h5 {
     h6 { font-size: 16px; }
   }
   @include breakpoint(large up) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
     p, blockquote { 
       font-size: 1.4rem; 
       margin-bottom: 1.3rem;
@@ -458,9 +458,11 @@ h1, h2, h3, h4, h5 {
   float: left;
   border: 1px solid $light-gray;
   margin-top: 1rem;
-  margin-left: -10%;
   margin-right: 0.7rem;
   margin-bottom: 0.5rem;
+  @include breakpoint(medium up) {
+    margin-left: -10%;
+  }
 }
 
 // Pagination
