@@ -135,14 +135,19 @@ blockquote {
   }
 }
 .btn--purple--hollow {
+  color: $deeppurple;
   border-color: $deeppurple;
   border-style: solid !important;
-  color: $deeppurple;
   background-color: transparent;
   font-family: $sanserif;
-  &:hover, &:active, &:visited, &:focus {
+  &:hover, &:active {
     color: $superdarkpurple;
     border-color: $superdarkpurple;
+    background-color: transparent;
+  }
+  &:visited, &:focus {
+    color: $deeppurple;
+    border-color: $deeppurple;
     background-color: transparent;
   }
 }
