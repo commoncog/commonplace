@@ -17,6 +17,7 @@
     {{> subscribebox}}
   </div>
   {{/if}}
+  {{#is "post"}}
   <div class='small-12 medium-8 medium-offset-2 end columns'>
     <div class='row small-uncollapse medium-collapse'>
       {{#if primary_tag}}
@@ -47,6 +48,7 @@
       </div>
     </div><!--row-->
   </div>
+  {{/is}}
 </div>
 {{/post}}
 {{> footer}}

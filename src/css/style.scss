@@ -13,10 +13,15 @@ $yellowbg: #fffced;
 $orange: #f2e6b1;
 $fadedblue: #eff3fc;
 $darkblue: #2351b9;
-$fadedpurple : #f7eef4;
+$fadedpurple: #f7eef4;
+$fadedmagenta: #edd6e5;
 $deeppurple: #5D2AB2;
 $deeperpurple: #472089;
+$graduatedpurple: #894f9e;
 $superdarkpurple: #3c1053;
+
+$gradient: linear-gradient(to bottom right,$graduatedpurple,$superdarkpurple);
+$footergradient: linear-gradient(to bottom left,$yellowbg,$fadedmagenta);
 
 $sanserif: 'Lato', 'Helvetica Neue', Arial, sans-serif;
 $serif: 'Calluna', Georgia, serif;
@@ -129,6 +134,21 @@ blockquote {
     background-color: transparent;
   }
 }
+.btn--purple--hollow {
+  border-color: $deeppurple;
+  border-style: solid !important;
+  color: $deeppurple;
+  background-color: transparent;
+  font-family: $sanserif;
+  &:hover, &:active {
+    color: $superdarkpurple;
+    border-color: $superdarkpurple;
+    background-color: transparent;
+  }
+  &:visited, &:focus {
+    background-color: transparent;
+  }
+}
 .button {
   font-family: $sanserif;
 }
@@ -150,7 +170,7 @@ h1, h2, h3, h4, h5 {
 
 // Header
 .header {
- background: linear-gradient(to bottom right,#894f9e,$superdarkpurple);
+ background: $gradient;
  margin-bottom: 2rem;
  border-bottom: 1px solid $deeperpurple;
 }
@@ -176,7 +196,7 @@ h1, h2, h3, h4, h5 {
   font-family: $serif;
   font-style: italic;
   display: block;
-  letter-spacing: -1px;
+  letter-spacing: -2px;
 }
 .header__logo__a-txt {
   color: $white;
@@ -189,7 +209,7 @@ h1, h2, h3, h4, h5 {
   text-align: right;
 }
 .header--feature {
-  background: linear-gradient(to bottom right,#894f9e,$superdarkpurple);
+  background: $gradient;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -412,6 +432,8 @@ h1, h2, h3, h4, h5 {
   @include breakpoint(large up) {
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $medium-gray;
 
     p, blockquote { 
       font-size: 1.4rem; 
@@ -419,7 +441,7 @@ h1, h2, h3, h4, h5 {
     }
     li {
       font-size: 1.4rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
   }
   a { border-bottom: 1px dotted map-get($foundation-palette, primary); }
@@ -565,7 +587,7 @@ h1, h2, h3, h4, h5 {
   padding-bottom: 1rem;
   margin-top: 1rem;
   border-top: 1px solid #d9a7c7;
-  background: linear-gradient(to bottom left,#fffced,#edd6e5);
+  background: $footergradient;
   box-shadow: 0 50vh 0 50vh #edd6e5;
   font-family: $sanserif;
 }
