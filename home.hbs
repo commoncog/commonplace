@@ -42,6 +42,7 @@
 </div>
 {{!-- CHANGE this filter to filter for the category you'd like --}}
 {{#get "posts" filter="tag:[books]" limit="4" as |books|}}
+{{#if books}}
 <div class='row'>
   <div class='small-12 columns'>
     {{!-- CHANGE this url to "/tag/<tagname>" to link to the tag addres --}}
@@ -57,6 +58,7 @@
     </div>
   {{/foreach}}
 </div>
+{{/if}}
 {{/get}}
 <div class='row post-page__recommendations'>
   {{#if @labs.subscribers}}
