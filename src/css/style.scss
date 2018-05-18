@@ -124,7 +124,6 @@ blockquote {
   border-color: #fff;
   color: #fff;
   background-color: transparent;
-  font-family: $sanserif;
   &:hover, &:active {
     color: #ccc;
     border-color: #ccc;
@@ -139,15 +138,9 @@ blockquote {
   border-color: $deeppurple;
   border-style: solid !important;
   background-color: transparent;
-  font-family: $sanserif;
   &:hover, &:active {
     color: $superdarkpurple;
     border-color: $superdarkpurple;
-    background-color: transparent;
-  }
-  &:visited, &:focus {
-    color: $deeppurple;
-    border-color: $deeppurple;
     background-color: transparent;
   }
 }
