@@ -456,7 +456,7 @@ h1, h2, h3, h4, h5 {
 .post-page-content--feature img[src$="#full"], .post-page-content--feature figure.kg-width-full img {
   @include breakpoint(small up) {
     max-width: 100vw;
-    margin-left: calc(67% - 50vw);
+    margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw); 
   }
 }
@@ -474,17 +474,16 @@ h1, h2, h3, h4, h5 {
     left: 22%;
     transform: translateX(-25%);
   }
-  @include breakpoint(xlarge up) {
+}
+.post-page-content--feature figure.kg-width-wide img {
+  @include breakpoint(large up) {
     max-width: rem-calc(650);
     left: 22%;
     transform: translateX(-25%);
   }
-}
-.post-page-content--feature figure.kg-width-wide img {
-  @include breakpoint(small up) {
-    max-width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw); 
+  @include breakpoint(medium only) {
+    max-width: 80vw;
+    margin-left: calc(70% - 50vw);
   }
 }
 .post-page__bottom-meta {
