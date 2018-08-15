@@ -28,6 +28,7 @@ $serif: 'Calluna', Georgia, serif;
 // Globals
 body {
   font-family: 'Calluna', Georgia, serif;
+  overflow-x: hidden; // this is a hack necessary for the full-width images technique we use
 }
 p, li, blockquote { 
   font-size: 1.2rem;
@@ -38,37 +39,11 @@ p, blockquote {
 li {
   margin-bottom: 1rem;
 }
-.post-page-content img[src$="#full"] { // Hack for full width images
-  position: relative;
-  margin-bottom: 1.2rem;
-  
-  @include breakpoint(medium down) {
-    max-width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw); 
-  }
-  @include breakpoint(large up) {
-    max-width: rem-calc(1000);
-    left: 35%;
-    transform: translateX(-25%);
-  }
-  @media screen and (min-width: 64em) and (max-width: 65em) {
-    max-width: 85vw;
-    left: 33%;
-    transform: translateX(-25%);
-  }
-    @include breakpoint(xlarge up) {
-    max-width: rem-calc(1000);
-    left: 40%;
-    transform: translateX(-25%);
-  }
+figcaption {
+  margin-top: -0.5rem;
 }
-.post-page-content--feature img[src$="#full"] {
-  @include breakpoint(small up) {
-    max-width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw); 
-  }
+figure {
+  margin-bottom: 1.2rem;
 }
 blockquote, blockquote p, blockquote li {
   color: $black;
@@ -81,6 +56,17 @@ blockquote {
   @include breakpoint(medium up) {
     margin-left: 1.5rem;
   }
+}
+code {
+  background: $fadedblue;
+  border: none;
+}
+pre {
+  margin-bottom: 1.2rem;
+  display: block;
+  background: $fadedblue;
+  border: 1px solid $medium-gray;
+  padding: 5px
 }
 @mixin pullquote {
   color: map-get($foundation-palette, primary);
@@ -440,6 +426,66 @@ h1, h2, h3, h4, h5 {
   }
   a { border-bottom: 1px dotted map-get($foundation-palette, primary); }
   img { margin-bottom: 1.2rem; }
+}
+// Full width images
+.post-page-content img[src$="#full"], .post-page-content figure.kg-width-full img { // Hack for full width images
+  position: relative;
+  margin-bottom: 1.2rem;
+  
+  @include breakpoint(medium down) {
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw); 
+  }
+  @include breakpoint(large up) {
+    max-width: rem-calc(1000);
+    left: 35%;
+    transform: translateX(-25%);
+  }
+  @media screen and (min-width: 64em) and (max-width: 65em) {
+    max-width: 85vw;
+    left: 33%;
+    transform: translateX(-25%);
+  }
+    @include breakpoint(xlarge up) {
+    max-width: rem-calc(1000);
+    left: 40%;
+    transform: translateX(-25%);
+  }
+}
+.post-page-content--feature img[src$="#full"], .post-page-content--feature figure.kg-width-full img {
+  @include breakpoint(small up) {
+    max-width: 100vw;
+    margin-left: calc(67% - 50vw);
+    margin-right: calc(50% - 50vw); 
+  }
+}
+// Wide width images
+.post-page-content figure.kg-width-wide img { // Hack for full width images
+  position: relative;
+  margin-bottom: 1.2rem;
+  
+  @include breakpoint(medium only) {
+    max-width: 80vw;
+    margin-left: calc(70% - 50vw);
+  }
+  @include breakpoint(large up) {
+    max-width: rem-calc(650);
+    left: 22%;
+    transform: translateX(-25%);
+  }
+  @include breakpoint(xlarge up) {
+    max-width: rem-calc(650);
+    left: 22%;
+    transform: translateX(-25%);
+  }
+}
+.post-page-content--feature figure.kg-width-wide img {
+  @include breakpoint(small up) {
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw); 
+  }
 }
 .post-page__bottom-meta {
   @include breakpoint(large up) {
