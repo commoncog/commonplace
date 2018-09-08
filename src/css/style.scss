@@ -12,15 +12,17 @@
 $yellowbg: #fffced;
 $orange: #f2e6b1;
 $fadedblue: #eff3fc;
-$darkblue: #2351b9;
+$vfadedblue: #e0f6fb;
+$darkblue: #004569;
+$darkerblue: #212945;
 $fadedpurple: #f7eef4;
 $fadedmagenta: #edd6e5;
 $deeppurple: #5D2AB2;
 $deeperpurple: #472089;
 $superdarkpurple: #3c1053;
 
-$gradient: linear-gradient(to bottom right,#61045F,#753a88);
-$footergradient: linear-gradient(to bottom left,$yellowbg,$fadedmagenta);
+$gradient: linear-gradient(to bottom right,$darkerblue,$darkblue);
+$footergradient: linear-gradient(to bottom right,$fadedblue,$vfadedblue);
 
 $sanserif: 'Lato', 'Helvetica Neue', Arial, sans-serif;
 $serif: 'Calluna', Georgia, serif;
@@ -150,9 +152,9 @@ h1, h2, h3, h4, h5 {
 
 // Header
 .header {
- background: $gradient;
+ background: $darkerblue;
  margin-bottom: 2rem;
- border-bottom: 1px solid $deeperpurple;
+ border-bottom: 1px solid $darkerblue;
 }
 .header__logo {
   padding: 0px;
@@ -270,7 +272,7 @@ h1, h2, h3, h4, h5 {
 
 // Subscribe box styles
 .subscribe-box {
-  background-color: $fadedpurple;
+  background-color: $fadedblue;
   padding-top: 0.8rem;
   padding-bottom: 0.5rem;
   margin-bottom: 2rem;
@@ -373,9 +375,9 @@ h1, h2, h3, h4, h5 {
   text-transform: uppercase;
 }
 .post-page-header__tag-bar a {
-  color: $superdarkpurple;
+  color: $darkblue;
   &:hover {
-    color: $deeppurple;
+    color: $darkerblue;
   }
 } 
 .post-page-header__metadata-bar {
@@ -617,7 +619,7 @@ h1, h2, h3, h4, h5 {
 }
 .social__li svg {
   height: 1.2rem;
-  fill: $deeperpurple;
+  fill: $darkerblue;
 }
 
 // Footer
@@ -625,9 +627,9 @@ h1, h2, h3, h4, h5 {
   padding-top: 1rem;
   padding-bottom: 1rem;
   margin-top: 2rem;
-  border-top: 1px solid #d9a7c7;
+  border-top: 1px solid $darkblue;
   background: $footergradient;
-  box-shadow: 0 50vh 0 50vh #edd6e5;
+  box-shadow: 0 50vh 0 50vh $vfadedblue;
   font-family: $sanserif;
 }
 .footer__heading {
