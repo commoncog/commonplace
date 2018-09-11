@@ -1,20 +1,17 @@
 <header class='full-width header' {{#if @blog.cover_image}}style="background-image: url({{@blog.cover_image}})"{{/if}}>
   <div class='row'>
-    <div class='header__logo small-5 medium-offset-2 medium-4 large-offset-1 large-3 columns'>
+    <div class='header__logo small-12 medium-12 large-1 large-offset-1 columns'>
       {{#if @blog.logo}}
-        <a href='{{@blog.url}}'><img class="header__logo__img" src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
-      {{else}}
-        <a class='header__logo__a-txt' href='{{@blog.url}}'><span class='header__logo--txt'>{{@blog.title}}</span></a>
+        <a href='/'><img class="header__logo__img" src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
       {{/if}} 
     </div>
-    <div class='header__right small-4 small-offset-3 medium-2 medium-offset-2 large-3 large-offset-4 end columns'>
-      {{#if @labs.subscribers}}
-      {{#is "home, post"}} 
-        <a href='#subscribe' class='button btn--white--hollow'>{{t "Subscribe"}}</a>
-      {{else}}
-        <a href='{{ @blog.url }}/subscribe' class='button btn--white--hollow'>{{t "Subscribe"}}</a>
-      {{/is}}
-      {{/if}}
+    <div class='header__name small-12 large-1 columns'>
+      <a class='header__name__a' href='/'><h1 class='header__name__heading'>{{@blog.title}}</h1></a>
     </div>
+    <nav class='header__nav small-12 medium-12 large-6 large-offset-2 end columns'>
+    {{#if @blog.navigation}}
+    {{navigation}}
+    {{/if}}
+    </nav>
   </div>
 </header>

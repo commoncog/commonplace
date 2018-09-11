@@ -5,8 +5,21 @@
 // @import '~foundation-sites/scss/motioncd -ui';
 @include foundation-everything(false); // false is to turn off the flexbox grid, and use the old grid
 
-@font-face {font-family: 'Calluna';src: url('../fonts/Calluna.eot');src: url('../fonts/Calluna.eot?#iefix') format('embedded-opentype'),url('../fonts/Calluna.woff2') format('woff2'),url('../fonts/Calluna.woff') format('woff'),url('../fonts/Calluna.ttf') format('truetype');}
-@font-face {font-family: 'Lato';src: url('../fonts/Lato.eot');src: url('../fonts/Lato.eot?#iefix') format('embedded-opentype'),url('../fonts/Lato.woff2') format('woff2'),url('../fonts/Lato.woff') format('woff'),url('../fonts/Lato.ttf') format('truetype');}
+@font-face {
+  font-family: 'Calluna';
+  src: url('../fonts/Calluna.eot');
+  src: url('../fonts/Calluna.eot?#iefix') format('embedded-opentype'),url('../fonts/Calluna.woff2') format('woff2'),url('../fonts/Calluna.woff') format('woff'),url('../fonts/Calluna.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/Lato.eot');
+  src: url('../fonts/Lato.eot?#iefix') format('embedded-opentype'),url('../fonts/Lato.woff2') format('woff2'),url('../fonts/Lato.woff') format('woff'),url('../fonts/Lato.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 // Variables
 $yellowbg: #fffced;
@@ -150,44 +163,71 @@ h1, h2, h3, h4, h5 {
 
 // Header
 .header {
- background: $gradient;
- margin-bottom: 2rem;
- border-bottom: 1px solid $deeperpurple;
+  background: #fff;
+  @include breakpoint(large up) {
+    margin-bottom: 3rem;
+    text-align: left;
+  }
+  @include breakpoint(medium down) {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
 }
 .header__logo {
   padding: 0px;
 }
 .header__logo__img {
-  height: 90px;
-  padding: 25px 15px;
+  @include breakpoint(large up) {
+    float: right;
+    padding: 10px 0 0 0;
+  }
+  @include breakpoint(medium down) {
+    float: center;
+    padding: 5px 0 0 0;
+  }
 }
-.header__logo--txt {
-  @include breakpoint (medium up) {
-    font-size: 2.6rem;
-    margin-top: 1rem;
-    padding-bottom: 1rem;
-  }
-  @include breakpoint (small down) {
-    font-size: 1.5rem;
-    margin-top: 1.8rem;
-    padding-bottom: 1.7rem;
-  }
-  padding-left: 10px;
-  font-family: $serif;
+.header__name {
+  margin-top: 1.7rem;
+}
+.header__name__heading {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.2rem;
+  font-weight: bold;
   font-style: italic;
-  display: block;
-  letter-spacing: -2px;
 }
-.header__logo__a-txt {
-  color: $white;
-  &:hover, &:active, &:focus {
-    color: $light-gray;
-  } 
+.header__name__a {
+  color: $black;
+
+  &:hover, &:active {
+    color: $black;
+  }
 }
-.header__right {
-  padding-top: 25px;
-  text-align: right;
+
+.header__nav {
+  font-family: $sanserif;
+  @include breakpoint(large up) {
+    padding-top: 45px;
+    text-align: right;
+  }
+  @include breakpoint(medium down) {
+    padding: 25px;
+    text-align: center;
+  }
 }
+.header__nav__ul {
+  list-style: none;
+  margin-left: 0;
+}
+.header__nav__li {
+  font-size: 1.1rem;
+  display: inline-block;
+  margin-right: 15px;
+}
+.header__nav__li__a {
+  color: #555;
+}
+
 .header--feature {
   background: $gradient;
   background-size: cover;
@@ -577,30 +617,6 @@ h1, h2, h3, h4, h5 {
   font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
 }
 
-// Nav
-.sidebar__nav {
-  margin-top: 1.5rem;
-}
-.sidebar__nav__ul {
-  list-style: none;
-  margin-left: 0;
-  font: 0.96rem 'Lato', 'Helvetica Neue', Arial, sans-serif;
-}
-
-@mixin sidebar-li-styles {
-  font-size: 1rem;
-  border-bottom: 1px dotted #ccc;
-  padding-bottom: 0.2rem;
-  margin-bottom: 0.7rem;
-}
-.sidebar__nav__li {
-  @include sidebar-li-styles;
-}
-.sidebar__nav__li--active {
-  @include sidebar-li-styles;
-  color: $deeppurple;
-}
-
 .sidebar__social {
   margin-top: 1.5rem;
 }
@@ -617,24 +633,22 @@ h1, h2, h3, h4, h5 {
 }
 .social__li svg {
   height: 1.2rem;
-  fill: $deeperpurple;
+  fill: get-color(primary);
 }
 
 // Footer
 .footer {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin-top: 2rem;
-  border-top: 1px solid #d9a7c7;
-  background: $footergradient;
-  box-shadow: 0 50vh 0 50vh #edd6e5;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-top: 3rem;
+  border-top: 3px solid #f66b73;
+  box-shadow: 0 50vh 0 50vh #333;
   font-family: $sanserif;
 }
 .footer__heading {
   font-family: $sanserif;
   font-size: 0.9rem;
   text-transform: uppercase;
-  color: $dark-gray;
 }
 .footer__tags {
   list-style: none;
