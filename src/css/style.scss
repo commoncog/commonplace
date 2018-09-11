@@ -236,6 +236,17 @@ h1, h2, h3, h4, h5 {
   min-height: 20vh;
   margin-bottom: 3rem;
 }
+.header--feature__logo {
+  width: 100px;
+  padding: 0 5px 5px 5px;
+  background-color: rgba(255,255,255,0.6);
+}
+.header--feature__name__a {
+  color: #fff;
+  &:hover, &:active {
+    color: #fff;
+  }
+}
 .header--feature__title-box {
   background-color: rgba(0,0,0,0.6);
   padding: 15px;
