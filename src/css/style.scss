@@ -184,6 +184,7 @@ h1, h2, h3, h4, h5 {
   @include breakpoint(medium down) {
     float: center;
     padding: 5px 0 0 0;
+    height: 120px;
   }
 }
 .header__name {
