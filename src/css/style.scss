@@ -427,9 +427,9 @@ h1, h2, h3, h4, h5 {
   text-transform: uppercase;
 }
 .post-page-header__tag-bar a {
-  color: $superdarkpurple;
+  color: $dark-gray;
   &:hover {
-    color: $deeppurple;
+    color: get-color(primary);
   }
 } 
 .post-page-header__metadata-bar {
