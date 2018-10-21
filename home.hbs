@@ -1,7 +1,7 @@
 {{!< default}}
 {{> header}}
 
-{{#get "posts" filter="tag:-[books]" limit=@config.posts_per_page as |normal_posts|}}
+{{#get "posts" filter="tag:-[podcast,video]" limit=@config.posts_per_page as |normal_posts|}}
 <div class='row'>
   <div class='small-12 medium-8 medium-offset-2 large-6 large-offset-1 columns'>
       {{#foreach normal_posts limit="1"}}
@@ -41,7 +41,7 @@
     </div>
 </div>
 {{!-- CHANGE this filter to filter for the category you'd like --}}
-{{#get "posts" filter="tag:[books]" limit="4" as |books|}}
+{{#get "posts" filter="tag:[podcast,video]" limit="4" as |books|}}
 {{#if books}}
 <div class='row'>
   <div class='small-12 columns'>
