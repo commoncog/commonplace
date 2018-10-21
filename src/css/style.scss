@@ -636,6 +636,49 @@ h1, h2, h3, h4, h5 {
   margin-top: 1.5rem;
 }
 
+// Sidebar Navigation
+.sidebar__nav {
+  margin-top: 1.5rem;
+}
+.sidebar__nav__ul {
+  list-style: none;
+  margin-left: 0;
+  font: 0.96rem 'Lato', 'Helvetica Neue', Arial, sans-serif;
+}
+@mixin sidebar-li-styles {
+  font-size: 1rem;
+  border-bottom: 1px dotted #ccc;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.7rem;
+}
+.sidebar__nav__li {
+  @include sidebar-li-styles;
+}
+.sidebar__nav__li--active {
+  @include sidebar-li-styles;
+  color: get-color(primary);
+}
+.sidebar__nav__ul {
+  list-style: none;
+  margin-left: 0;
+  font: 0.96rem 'Lato', 'Helvetica Neue', Arial, sans-serif;
+}
+
+@mixin sidebar-li-styles {
+  font-size: 1rem;
+  border-bottom: 1px dotted #ccc;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.7rem;
+}
+.sidebar__nav__li {
+  @include sidebar-li-styles;
+}
+.sidebar__nav__li--active {
+  @include sidebar-li-styles;
+  color: $deeppurple;
+}
+
+
 // Social bar
 .social__ul {
   list-style: none;
