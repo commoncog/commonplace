@@ -121,6 +121,17 @@ pre {
     max-height: 150px;
   }
 }
+.btn--hollow {
+  color: get-color(primary);
+  border-color: get-color(primary);
+  border-style: solid !important;
+  background-color: transparent;
+  &:hover, &:active {
+    color: scale-color($button-background, $lightness: -15%);
+    border-color: scale-color($button-background, $lightness: -15%);
+    background-color: transparent;
+  }
+}
 .btn--white--hollow {
   border-color: #fff;
   color: #fff;
@@ -131,17 +142,6 @@ pre {
     background-color: transparent;
   }
   &:visited, &:focus {
-    background-color: transparent;
-  }
-}
-.btn--purple--hollow {
-  color: $deeppurple;
-  border-color: $deeppurple;
-  border-style: solid !important;
-  background-color: transparent;
-  &:hover, &:active {
-    color: $superdarkpurple;
-    border-color: $superdarkpurple;
     background-color: transparent;
   }
 }
@@ -439,6 +439,12 @@ h1, h2, h3, h4, h5 {
   font-size: 0.8rem;
   margin-bottom: 0.8rem;
 }
+.post-page-header--guide {
+  @include breakpoint(large up) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
 .post-page-content {
   @include breakpoint(medium up) {
     h1, h2, h3, h4, h5, h6 { margin-bottom: 0.9rem; }
@@ -479,7 +485,7 @@ h1, h2, h3, h4, h5 {
       margin-bottom: 0.5rem;
     }
   }
-  a { border-bottom: 1px dotted map-get($foundation-palette, primary); }
+  a { border-bottom: 1px dotted get-color(primary); }
   img { margin-bottom: 1.2rem; }
 }
 // Full width images
