@@ -479,14 +479,9 @@ h1, h2, h3, h4, h5 {
   }
 }
 .post-page-content--feature figure.kg-width-wide img {
-  @include breakpoint(large up) {
-    max-width: rem-calc(650);
-    left: 22%;
-    transform: translateX(-25%);
-  }
-  @include breakpoint(medium only) {
+  @include breakpoint(medium up) {
     max-width: 80vw;
-    margin-left: calc(70% - 50vw);
+    margin-left: calc(70% - 52vw);
   }
 }
 .post-page__bottom-meta {
