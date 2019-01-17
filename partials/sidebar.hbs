@@ -4,14 +4,12 @@
   <p class='sidebar__desc_p'>{{@blog.description}}</p>
   </section>
 
-  <nav class='sidebar__nav'>
-  <h2 class='sidebar__heading'>{{t "Explore"}}</h2>
-  <ul class="sidebar__nav__ul" role="menu">
-    <li class="sidebar__nav__li" role="menuitem"><a href="/articles/about">More About</a></li>
-    <li class="sidebar__nav__li" role="menuitem"><a href="/articles/newsletter">The MFS Newsletter</a></li>
-    <li class="sidebar__nav__li" role="menuitem"><a href="/keep-your-people">Keep Your People</a></li>
-  </ul>
-  </nav>
+  {{#if @blog.navigation}}
+    <nav class='sidebar__nav'>
+    <h2 class='sidebar__heading'>{{t "Explore"}}</h2>
+    {{navigation}}
+    </nav>
+  {{/if}}
 
   <section class='sidebar__social'>
   <h2 class='sidebar__heading'>{{t "Social"}}</h2>

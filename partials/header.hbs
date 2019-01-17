@@ -9,9 +9,10 @@
       <a class='header__name__a' href='/'><h1 class='header__name__heading'>{{@blog.title}}</h1></a>
     </div>
     <nav class='header__nav small-12 medium-12 large-6 large-offset-2 end columns'>
-    {{#if @blog.navigation}}
-    {{navigation}}
-    {{/if}}
+    <ul class='header__nav__ul' role='menu'>
+      <li class='header__nav__li' role='menuitem'><a class='header__nav__li__a' href='https://managementforstartups.com/articles/'>articles</a></li>
+      <li class='header__nav__li' role='menuitem'><a class='header__nav__li__a' href='mailto:cedric@managementforstartups.com'>contact</a></li>
+    </ul>
     </nav>
   </div>
 </header>

@@ -1,5 +1,5 @@
-<ul class='header__nav__ul' role='menu'>
+<ul class='sidebar__nav__ul' role='menu'>
   {{#foreach navigation}}
-    <li class='header__nav__li' role='menuitem'><a class='header__nav__li__a' href='{{url absolute="true"}}'>{{label}}</a></li>
+    <li class='sidebar__nav__li{{#if current}}--active{{/if}}' role='menuitem'><a href='{{url absolute="true"}}'>{{label}}</a></li>
   {{/foreach}}
 </ul>
