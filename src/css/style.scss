@@ -5,7 +5,16 @@
 // @import '~foundation-sites/scss/motioncd -ui';
 @include foundation-everything(false); // false is to turn off the flexbox grid, and use the old grid
 
-@font-face {font-family: 'Calluna';src: url('../fonts/Calluna.eot');src: url('../fonts/Calluna.eot?#iefix') format('embedded-opentype'),url('../fonts/Calluna.woff2') format('woff2'),url('../fonts/Calluna.woff') format('woff'),url('../fonts/Calluna.ttf') format('truetype');}
+@font-face {
+  font-family: 'Calluna';
+    src: url('../fonts/Calluna.eot');
+    src: url('../fonts/Calluna.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Calluna.woff2') format('woff2'),
+         url('../fonts/Calluna.woff') format('woff'),
+         url('../fonts/Calluna.ttf') format('truetype'); 
+  font-weight: normal; 
+  font-style: normal;
+}
 @font-face {
   font-family: 'Calluna';
     src: url('../fonts/Calluna-It-webfont.eot');
@@ -23,8 +32,8 @@
          url('../fonts/Calluna-Bold-webfont.woff2') format('woff2'),
          url('../fonts/Calluna-Bold-webfont.woff') format('woff'),
          url('../fonts/Calluna-Bold-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: bold;
+    font-weight: bold;
+    font-style: normal;
 }
 @font-face {font-family: 'Lato';src: url('../fonts/Lato.eot');src: url('../fonts/Lato.eot?#iefix') format('embedded-opentype'),url('../fonts/Lato.woff2') format('woff2'),url('../fonts/Lato.woff') format('woff'),url('../fonts/Lato.ttf') format('truetype');}
 
