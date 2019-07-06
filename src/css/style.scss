@@ -12,6 +12,26 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Calluna';
+    src: url('../fonts/Calluna-It-webfont.eot');
+    src: url('../fonts/Calluna-It-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Calluna-It-webfont.woff2') format('woff2'),
+         url('../fonts/Calluna-It-webfont.woff') format('woff'),
+         url('../fonts/Calluna-It-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+  font-family: 'Calluna';
+    src: url('../fonts/Calluna-Bold-webfont.eot');
+    src: url('../fonts/Calluna-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Calluna-Bold-webfont.woff2') format('woff2'),
+         url('../fonts/Calluna-Bold-webfont.woff') format('woff'),
+         url('../fonts/Calluna-Bold-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
 
 @font-face {
   font-family: 'Lato';
