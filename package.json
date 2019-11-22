@@ -9,6 +9,10 @@
     "author": {
         "email": "cedric@commoncog.com"
     },
+    "keywords": [
+      "sass",
+      "ghost-theme"
+    ],
     "gpm": {
         "type": "theme",
         "categories": [

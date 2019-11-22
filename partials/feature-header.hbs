@@ -1,10 +1,10 @@
 <header class='full-width header--feature' {{#if feature_image}}style='background-image: url({{img_url feature_image}})'{{/if}}>
   <div class='row'>
     <div class='header--feature__logo small-5 medium-offset-2 medium-4 large-offset-1 large-3 columns'>
-        <a href='/'><img class="header__logo__img" src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+        <a href='/'><img class="header__logo__img" src="{{@site.logo}}" alt="{{@site.title}}" /></a>
     </div>
     <div class='header__name small-12 large-1 columns'>
-      <h1 class='header__name__heading'><a class='header--feature__name__a' href='/'>{{@blog.title}}</a></h1>
+      <h1 class='header__name__heading'><a class='header--feature__name__a' href='/'>{{@site.title}}</a></h1>
     </div>
     <nav class='header__nav small-12 medium-12 large-6 large-offset-2 end columns'>
     </nav>
@@ -13,7 +13,7 @@
     <div class='small-12 medium-8 medium-offset-2 columns header--feature__title-box'>
       <span class='header--feature__tag-bar'>{{tags separator=", "}}</span>
       <h1 class='header--feature__heading'>{{title}}</h1> 
-      {{#is "post"}}<div class='header--feature__metadata-bar'>{{t "By"}} {{author}}</div>{{/is}}
+      {{#is "post"}}<div class='header--feature__metadata-bar'>{{t "By"}} {{authors}}</div>{{/is}}
     </div>
   </div>
 </header>
