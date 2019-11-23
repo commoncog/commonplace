@@ -206,9 +206,9 @@ h1, h2, h3, h4, h5 {
     padding: 1.5rem 0 0 0.7rem;
   }
   @include breakpoint(medium down) {
+    max-width: 150px;
     float: center;
-    padding: 5px 0 0 0;
-    height: 120px;
+    padding: 2rem 0 0 0;
   }
 }
 .header__name {
