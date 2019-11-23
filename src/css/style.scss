@@ -201,8 +201,9 @@ h1, h2, h3, h4, h5 {
 }
 .header__logo__img {
   @include breakpoint(large up) {
-    float: right;
-    padding: 10px 0 0 0;
+    max-width: 153px;
+    float: left;
+    padding: 1.5rem 0 0 0.7rem;
   }
   @include breakpoint(medium down) {
     float: center;
