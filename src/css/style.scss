@@ -344,7 +344,7 @@ h1, h2, h3, h4, h5 {
   border-bottom: 1px dotted $medium-gray;
 }
 
-// Subscribe box styles
+// Subscribe box styles (Deprecated)
 .subscribe-box {
   background-color: $fadedpurple;
   padding-top: 0.8rem;
@@ -358,6 +358,15 @@ h1, h2, h3, h4, h5 {
 .subscribe-box__p {
   font-size: 0.9rem;
   line-height: 120%;
+}
+
+// Converkit subscribe box
+.ck-subscribe-box {
+  font-family: $sanserif;
+  h1 {
+    font-family: $sanserif;
+    margin-top: 1rem;
+  }
 }
 
 // Index styles
