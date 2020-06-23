@@ -301,9 +301,14 @@ h1, h2, h3, h4, h5 {
 }
 
 // Subscribe box styles
+.paddingless {
+  padding: 0;
+}
 .subscribe-box {
   background-color: $fadedpurple;
   padding-top: 0.8rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
   padding-bottom: 0.5rem;
   margin-bottom: 2rem;
 }
@@ -512,6 +517,12 @@ h1, h2, h3, h4, h5 {
     max-width: 80vw;
     margin-left: calc(70% - 52vw);
   }
+}
+.post-page__date_info {
+  padding: 2rem 0;
+  color: #666;
+  font-style: italic;
+  font-size: 1.1rem;
 }
 .post-page__bottom-meta {
   @include breakpoint(large up) {

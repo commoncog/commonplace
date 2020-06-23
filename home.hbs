@@ -62,9 +62,12 @@
 {{/get}}
 <div class='row post-page__recommendations'>
   {{#if @labs.subscribers}}
-  <div class='small-12 medium-8 medium-offset-2 large-4 large-offset-1 large-push-7 columns subscribe-box'>
-    {{> subscribebox}}
-  </div>
+    <div class='small-12 medium-8 medium-offset-2 large-4 large-offset-1 large-push-7 columns paddingless'>
+      <div class='subscribe-box'>
+        {{> subscribebox}}
+      </div>
+      <div>&nbsp;&nbsp;</div>
+    </div>
   {{/if}}
   <div class='small-12 medium-8 medium-offset-2 large-6 {{#if @labs.subscribers}}large-pull-5{{/if}} large-offset-1 end columns'>
     {{#foreach normal_posts from="4"}}
