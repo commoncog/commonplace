@@ -1,10 +1,10 @@
-<header class='full-width header' {{#if @blog.cover_image}}style="background-image: url({{@blog.cover_image}})"{{/if}}>
+<header class='full-width header' {{#if @site.cover_image}}style="background-image: url({{@site.cover_image}})"{{/if}}>
   <div class='row'>
     <div class='header__logo small-5 medium-offset-2 medium-4 large-offset-1 large-3 columns'>
-      {{#if @blog.logo}}
-        <a href='{{@blog.url}}'><img class="header__logo__img" src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+      {{#if @site.logo}}
+        <a href='{{@site.url}}'><img class="header__logo__img" src="{{@site.logo}}" alt="{{@site.title}}" /></a>
       {{else}}
-        <a class='header__logo__a-txt' href='{{@blog.url}}'><span class='header__logo--txt'>{{@blog.title}}</span></a>
+        <a class='header__logo__a-txt' href='{{@site.url}}'><span class='header__logo--txt'>{{@site.title}}</span></a>
       {{/if}} 
     </div>
     <div class='header__right small-4 small-offset-3 medium-2 medium-offset-2 large-3 large-offset-4 end columns'>
@@ -12,7 +12,7 @@
       {{#is "home, post"}} 
         <a href='#subscribe' class='button btn--white--hollow'>{{t "Subscribe"}}</a>
       {{else}}
-        <a href='{{ @blog.url }}/subscribe-to-the-commonplace-newsletter/#subscribebox-anchor' class='button btn--white--hollow'>{{t "Subscribe"}}</a>
+        <a href='{{ @site.url }}/subscribe-to-the-commonplace-newsletter/#subscribebox-anchor' class='button btn--white--hollow'>{{t "Subscribe"}}</a>
       {{/is}}
       {{/if}}
     </div>

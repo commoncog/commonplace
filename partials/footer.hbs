@@ -26,15 +26,15 @@
   
   <section class='small-12 medium-2 end columns'>
   <h2 class='footer__heading'>{{t "Colophon"}}</h2>
-  <section class='footer__copyright'><a href='{{@blog.url}}'>{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+  <section class='footer__copyright'><a href='{{@site.url}}'>{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
   <ul class='social__ul'>
-    {{#if @blog.facebook}}
-      <li class='social__li'><a href="{{facebook_url @blog.facebook}}" target="_blank" rel="noopener">{{> "icons/facebook"}}</a></li>
+    {{#if @site.facebook}}
+      <li class='social__li'><a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">{{> "icons/facebook"}}</a></li>
     {{/if}}
-    {{#if @blog.twitter}}
-      <li class='social__li'><a href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">{{> "icons/twitter"}}</a></li>
+    {{#if @site.twitter}}
+      <li class='social__li'><a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">{{> "icons/twitter"}}</a></li>
     {{/if}}
-    <li class='social__li'><a href="https://feedly.com/i/subscription/feed/{{@blog.url}}/rss/" target="_blank" rel="noopener">{{> "icons/rss"}}</a></li>
+    <li class='social__li'><a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" target="_blank" rel="noopener">{{> "icons/rss"}}</a></li>
   </ul>
   <p class='footer__theme-credit'>{{t "Published using"}} <a class='footer__theme-credit__a' href='https://commoncog.com/blog/commonplace-theme'>Commonplace</a>, {{t "powered by"}} <a class='footer__theme-credit__a' href='https://ghost.org'>Ghost</a></p>
   </section>

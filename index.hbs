@@ -9,7 +9,7 @@
         <h3 class="tag-index__desc-heading">{{description}}</h3>
       </div>
     {{/tag}}{{/is}}
-    {{#is "author"}}{{#author}}
+    {{#is "author"}}{{#primary_author}}
       <div class='index__meta_box'>
         {{#if profile_image}}<img class='author-index__profile-img' src='{{img_url profile_image}}' alt="{{name}}"/>{{/if}}
         <h1>{{name}}</h1>
@@ -22,7 +22,7 @@
       </div>
         <p class='author-index__bio'>{{bio}}</p>
       </div>
-    {{/author}}{{/is}}
+    {{/primary_author}}{{/is}}
     {{> loop}}
   </div>
   <div class='small-12 medium-8 medium-offset-2 large-3 large-offset-1 end columns'>
