@@ -8,13 +8,11 @@
       {{/if}} 
     </div>
     <div class='header__right small-4 small-offset-3 medium-2 medium-offset-2 large-3 large-offset-4 end columns'>
-      {{#if @labs.subscribers}}
       {{#is "home, post"}} 
         <a href='#subscribe' class='button btn--white--hollow'>{{t "Subscribe"}}</a>
       {{else}}
         <a href='{{ @site.url }}/subscribe-to-the-commonplace-newsletter/#subscribebox-anchor' class='button btn--white--hollow'>{{t "Subscribe"}}</a>
       {{/is}}
-      {{/if}}
     </div>
   </div>
 </header>

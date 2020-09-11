@@ -21,15 +21,13 @@
   </div>
 </div>
 <div class='row post-page__bottom-meta'>
-  {{#if @labs.subscribers}}
   <div class='small-12 medium-8 medium-offset-2 large-4 large-offset-1 large-push-7 columns paddingless'>
     <div class='subscribe-box'>
       {{> subscribebox}} 
     </div>
     <div>&nbsp;&nbsp;</div>
   </div>
-  {{/if}}
-  <div class='small-12 medium-8 medium-offset-2 large-6 {{#if @labs.subscribers}}large-pull-5{{/if}} large-offset-1 end columns'>
+  <div class='small-12 medium-8 medium-offset-2 large-6 large-pull-5 large-offset-1 end columns'>
     <div class='row small-uncollapse medium-collapse large-collapse'>
       {{#if primary_tag}}
         {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{comment_id}}" limit="3" as |related_posts|}}
