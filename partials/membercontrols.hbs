@@ -1,0 +1,15 @@
+  <nav class='sidebar__nav sidebar__members'>
+  <h2 class='sidebar__heading'>Members</h2>
+  <ul class='sidebar__nav__ul' role='menu'>
+    {{!--<li class='sidebar__nav__li' role='menuitem'><a href="{{@site.url}}/members/">Members-Only Articles</a></li>--}}
+    <li class='sidebar__nav__li' role='menuitem'><a href="{{@site.url}}/g/">Guides</a></li>
+    <li class='sidebar__nav__li' role='menuitem'><a href="https://forum.commoncog.com">Forum</a></li>
+    {{#if member}}
+    <li class='sidebar__nav__li' role='menuitem'><a href="{{@site.url}}/account/">Manage membership</a> </li>
+    <li class='sidebar__nav__li' role='menuitem'><a href="javascript:" data-members-signout>Logout</a></li>
+    {{else}}
+    <li class='sidebar__nav__li' role='menuitem'><a href="{{@site.url}}/signup/">About Membership</a> </li>
+    <li class='sidebar__nav__li' role='menuitem'><a href="{{@site.url}}/login/">Login</a> </li>
+    {{/if}}
+  </ul>
+  </nav>

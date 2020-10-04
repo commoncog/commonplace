@@ -735,6 +735,11 @@ h1, h2, h3, h4, h5 {
   font: 0.96rem 'Lato', 'Helvetica Neue', Arial, sans-serif;
 }
 
+.sidebar__members {
+  background-color: #fffced;
+  padding: 0.5rem 0;
+}
+
 @mixin sidebar-li-styles {
   font-size: 1rem;
   border-bottom: 1px dotted #ccc;
@@ -893,7 +898,10 @@ form[data-members-form].loading .button-loader {
   text-align: center;
 }
 .offer__monthly-column {
- border-right: 1px solid #ddd;
- text-align: right;
+  border-right: 1px solid #ddd;
+  @include breakpoint(medium up) {
+    text-align: right;
+  }
 }
 .upper { text-transform: uppercase; }
+
