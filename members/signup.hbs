@@ -1,0 +1,88 @@
+{{!< ../default}}
+{{> header}}
+{{#if @member}}
+{{!-- Logged in: Redirect home --}}
+<script>window.location = '{{@site.url}}/members/';</script>
+{{else}}
+  <div class="row">
+    <div class="small-12 columns">
+    </div>
+  </div>
+  <div class="row">
+    <div class='small-12 medium-6 medium-offset-3 columns'>
+      <h1 class='offer__header'>The Commonplace Membership Program</h1>
+      <hr/>
+      <p>You’re a busy person, and you’re looking for an edge in your career.</p>
+
+      <p>This is entirely natural. We live in a competitive world, in an environment of career change that our grandparents didn’t have to worry about. </p>
+
+      <p>Our grandparents could rely on job security. We no longer assume job security as a given. </p>
+
+      <p>And we face other challenges:</p>
+      
+      <ul>
+        <li>The world is globalised now, which means that we compete against more people from more places.</li>
+        <li>We face the rise of better automation — which means we’ll increasingly go up against computers, not just humans.</li>
+        <li>We assume <em>many</em> job changes over the course of our careers, instead of sticking to one company for life.</li>
+      </ul>
+
+      <p>More importantly, navigating a modern career often seems overwhelming. There’s too much information to sift through. It’s difficult to know if something applies directly to your career. And it’s difficult to know what your next move should be.</p>
+
+      <p>But of course, it doesn’t have to be this way.</p>
+      <hr/>
+      <h2 class='offer__header'>Navigating a Modern Career Often Seems Overwhelming</h2>
+      <hr/>
+      <p>Commonplace is built around a single idea: <strong>today, job security is the ability to get your next job, not keep your current one.</strong></p>
+
+      <p>The way you go about doing that is to focus on <a href="https://commoncog.com/blog/career-moats-101/">career moats</a>: that is, building competitive advantages that ensure you don’t have to worry about finding your next job. Much of my writing is focused on understanding <em>what</em> career moats are, and <em>how</em> to get better at building them.</p>
+
+      <p>I do this by writing from synthesis and practice. And I do this because I think having a career moat is an amazing thing.</p>
+
+      <h3 class='offer__header'>If you have a career moat, you aren’t as worried about finding work. </h3>
+
+      <p>You know that if you are ever laid off, you may easily find another job, because you possess ‘career capital’ — skills and resources that are relatively rare, and are in sufficient demand to guarantee enough money to support you and yours.</p>
+
+      <p>This knowledge gives you peace of mind. </p>
+
+      <p>It allows you to think more strategically about your career, and it allows you to plan your moves ahead of time. </p>
+
+      <hr/>
+
+      <h2 class='offer__header'>Learn and Practice Building Your Career Moat, by Joining the Commonplace Membership Program</h2>
+      <hr/>
+
+      <p>The Commonplace membership takes the rigour of the Commonplace blog and doubles down on a focus to action.</p>
+
+      <p>You’ll get access to: </p>
+
+      <ul>
+        <li><strong>Action Sheets</strong> — summarised actionable items from <strong>every</strong> Commonplace blog post. Just the basic principles that you can refer to when you’re about to put the ideas to practice.</li>
+        <li><strong>Members-only blog posts and guides</strong> — you’ll get access to Commonplace <em>guides</em> — constantly updated actionable content on core topics like career moats, learning science, and avoiding burnout. You’ll also gain access to action-oriented, members-only posts, which I intend to write once a month.</li>
+        <li><strong>Access to a Community of Practice</strong> — access to a <a href="https://forum.commoncog.com/">private community</a> that is focused on practice, not discussion. Once a week, every week, we share our experiments and our goals, and then report back on how we did on those experiments. Commonplace blog comments are also limited to members.</li>
+        <li><strong>Early access and discounts on the Commoncog app</strong> — Members get early-access to the <a href='https://commoncog.com'>Commoncog app</a>, and a special discount when it reaches general availability.</li>
+      </ul>
+
+      <p>If you find the blog posts on Commonplace valuable, you’ll love what I’ve planned for members. </p>
+
+      <p>Your subscription allows me to keep producing Commonplace. It allows me to go deep on topics that might be useful to members. And it allows me to keep producing the free posts that you know and love.</p>
+
+      <hr/>
+      <h2 class='offer__header'>Sign Up For a Commonplace Membership:</h2>
+      <hr/>
+    </div>
+    <div class="row">
+      <div class='small-12 medium-4 medium-offset-2 offer__monthly-column columns'>
+        <h2 class='offer__plan-header'>Monthly</h2>
+        <p><span class='upper'>{{@price.currency}}</span>{{@price.currency_symbol}}{{@price.monthly}} a month</p>
+        <a href="javascript:" data-members-plan="Monthly" class="button large offer__btn">Subscribe Monthly <em>(<span class='upper'>{{@price.currency}}</span>{{@price.currency_symbol}}{{@price.monthly}}/mo)</em></a>
+      </div>
+      <div class="small-12 medium-4 end columns">
+        <h2 class='offer__plan-header'>Yearly</h2>
+        <h3 class='offer__price-header'></h3>
+        <p><span class='upper'>{{@price.currency}}</span>{{@price.currency_symbol}}{{@price.yearly}} a year ($5.83 a month)</p>
+        <a href="javascript:" data-members-plan="Yearly" class="button large offer__btn">Subscribe Yearly <em>(<span class='upper'>{{@price.currency}}</span>{{@price.currency_symbol}}{{@price.yearly}}/yr)</em></a>
+      </div>
+    </div>
+  </div>
+{{/if}}
+{{>footer}}

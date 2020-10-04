@@ -47,6 +47,8 @@ $fadedmagenta: #edd6e5;
 $deeppurple: #5D2AB2;
 $deeperpurple: #472089;
 $superdarkpurple: #3c1053;
+$error: #FFDFDF;
+$success: #98c22e;
 
 $gradient: linear-gradient(to bottom right,#61045F,#753a88);
 $footergradient: linear-gradient(to bottom left,$yellowbg,$fadedmagenta);
@@ -815,4 +817,83 @@ h1, h2, h3, h4, h5 {
   padding-bottom: 0.4rem;
 }
 
+/*-- Signup and Signin Form Styles
+*/
+form[data-members-form] .button-loader,
+form[data-members-form] .message-success,
+form[data-members-form] .message-error {
+    display: none;
+}
+/*-- Show success message on success --*/
+form[data-members-form].success .message-success {
+    display: block;
+}
+/*-- Show error message on error --*/
+form[data-members-form].error .message-error {
+    display: block;
+}
 
+form[data-members-form].success .message-success,
+form[data-members-form].error .message-error {
+    position: fixed;
+    top: 84px;
+    right: 20px;
+    left: 20px;
+    z-index: 9999;
+    margin: 0 auto;
+    padding: 10px 0;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.5em;
+    font-weight: 500;
+    text-align: center;
+    background: $success;
+   
+    border-radius: 5px;
+}
+form[data-members-form].success .message-success {
+    background: $success;
+}
+form[data-members-form].error .message-error {
+    color: #111;
+    background: #FF725C;
+    box-shadow: $error;
+}
+
+/* Hide button text */
+form[data-members-form] .button-content {
+  display: block;
+  margin: 1em 2em;
+}
+form[data-members-form].loading .button-content {
+    display: inline-block;
+    margin: 0;
+    visibility: hidden;
+}
+/* Show loading spinner */
+form[data-members-form].loading .button-loader {
+    display: inline-block;
+    margin-left: -80px;
+    transform: scale(0.7);
+}
+.button-loader svg path,
+.button-loader svg rect {
+    fill: #fff;
+}
+.lato { font-family: $sanserif; }
+.offer__header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.offer__plan-header {
+  font-style: italic;
+}
+.offer__price-header {
+  color: $deeperpurple;
+  text-align: center;
+}
+.offer__monthly-column {
+ border-right: 1px solid #ddd;
+ text-align: right;
+}
+.upper { text-transform: uppercase; }
