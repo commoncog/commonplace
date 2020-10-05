@@ -1,0 +1,74 @@
+{{!< ../default}}
+{{>header}}
+{{#if @member.paid}}
+  <div class='row'>
+    <div class='small-12 medium-8 medium-offset-2 large-6 large-offset-1 columns'>
+      {{#foreach @member.subscriptions}}
+        <h2>Membership Management</h2>
+        <hr/>
+        <p>Hello {{@member.name}}! You have an active Commonplace account with access to all areas.</p>
+
+        <p><a href="mailto:cedric@commoncog.com?subject=Membership Question">Get in touch</a> if you have any problems, or need some help getting things updated. Thank you for being a member!</p>
+
+        {{#if cancel_at_period_end}}
+          <p><strong>Note:</strong> Your subscription will expire on {{date current_period_end format="DD MMM YYYY"}}.If you change your mind in the meantime you can turn auto-renew back on to continue your subscription.</p>
+        {{/if}}
+
+        <h3>Membership Information</h3>
+        <hr/>
+        <div class='row'>
+          <div class='small-12 medium-6 columns'>
+            <h4>Current Plan</h4>
+            {{#if @member.paid}}
+              <p>{{plan.currency_symbol}}{{price plan.amount}}/{{plan.interval}}</p>
+              <p><strong>{{#if cancel_at_period_end}}Expires{{else}}Next bill date{{/if}}:</strong> {{date current_period_end format="DD MMM YYYY"}}</p>
+            {{else}}
+              <p>Invited member</p>
+            {{/if}}
+          </div>
+          <div class='small-12 medium-6 columns'>
+            <h4>Billing</h4>
+            <p>**** **** **** {{default_payment_card_last4}}</p>
+            <p><a class='' href="javascript:"
+              data-members-edit-billing
+              data-members-success="/account/?stripe=billing-update-success"
+              data-members-cancel="/account/?stripe=billing-update-cancel">Change billing info</a></p>
+            <p>{{cancel_link class=""}}</p>
+          </div>
+        </div>
+      {{/foreach}}
+    </div>
+    <div class='small-12 medium-8 medium-offset-2 large-3 large-offset-1 end columns'>
+      {{> membercontrols}}
+    </div>
+  </div>
+{{else if @member}}
+  <div class='row'>
+    <div class='small-12 medium-8 medium-offset-2 large-6 large-offset-1 accounts__page columns'>
+      <h2 class="">Membership Management</h2>
+      <hr/>
+      <p>Hello {{@member.name}}! You have a non-paying Commonplace membership account. You might not have access to some content that's created for paid members only.</p>
+      <p><a href="mailto:cedric@commoncog.com?subject=Membership Question">Get in touch</a> if you have any problems, or need some help getting things updated.</p>
+
+      <h3>Membership Information</h3>
+      <hr/>
+      <div class='row'>
+        <div class='small-12 medium-6 columns'>
+          <h4>Current Plan</h4>
+            <p>Non-paying member</p>
+        </div>
+        <div class='small-12 medium-6 columns'>
+          <h4>Billing</h4>
+          <p>You are not currently subscribed to any plan. <a href='{{@site.url}}/signup/'>Subscribe here &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <div class='small-12 medium-8 medium-offset-2 large-3 large-offset-1 end columns'>
+      {{> membercontrols}}
+    </div>
+  </div>
+{{else}}
+  {{!-- Not logged in: Redirect to login --}}
+  <script>window.location = '{{@site.url}}/login/';</script>
+{{/if}}
+{{>footer}}

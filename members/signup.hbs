@@ -1,8 +1,8 @@
 {{!< ../default}}
 {{> header}}
-{{#if @member}}
+{{#if @member.paid}}
   {{!-- Logged in: Redirect home --}}
-  <script>window.location = '{{@site.url}}/members/';</script>
+  <script>window.location = '{{@site.url}}/m/';</script>
 {{else}}
   <div class="row">
     <div class='small-12 medium-6 medium-offset-3 columns'>
@@ -10,7 +10,7 @@
       <hr/>
       <p>You’re a busy person, and you’re looking for an edge in your career.</p>
 
-      <p>This is entirely natural. We live in a competitive world. </p>
+      <p>And this is entirely natural, of course. We live in a competitive world. </p>
 
       <p>Our grandparents could rely on job security. We no longer assume job security as a given. </p>
 
