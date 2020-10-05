@@ -17,6 +17,7 @@
   </div><!--row-->
   <div class='row'>
     <div class='small-12 medium-8 medium-offset-2 columns header--feature__title-box'>
+      {{#has visibility="members"}}<span class='members-flare--feature'><img src='{{asset "img/lock.svg"}}'> Members only</span>&nbsp;&nbsp;{{/has}}
       <span class='header--feature__tag-bar'>{{tags separator=", "}}</span>
       <h1 class='header--feature__heading'>{{title}}</h1> 
       {{#is "post"}}<div class='header--feature__metadata-bar'>{{t "By"}} {{authors}}</div>{{/is}}

@@ -4,7 +4,14 @@
 <div class='row'>
     <div class='small-12 medium-8 medium-offset-2 columns'>
       <section class='post-page-content--feature'>
-      {{ content }}
+      {{#if access}}
+        {{ content }}
+      {{else}}
+        {{#if custom_excerpt}}
+          <p class='post__custom-excerpt'>{{custom_excerpt}}</p>
+        {{/if}}
+        {{> members-only}}
+      {{/if}}
       </section>
       <section class='post-page__date_info'>
       Originally published <time class='' datetime="{{date published_at format='DD MMMM YYYY'}}">{{date published_at format="DD MMMM YYYY"}}, last updated <time class='' datetime="{{date updated_at format='DD MMMM YYYY'}}">{{date updated_at format="DD MMMM YYYY"}}</time>.

@@ -2,13 +2,13 @@
 {{> header}}
 {{#if @member}}
   {{!-- Logged in: Redirect home --}}
-  <script>window.location = '{{@site.url}}/members/';</script>
+  <script>window.location = '{{@site.url}}/m/';</script>
 {{else}}
   <div class='row'>
-    <div class='small-12 medium-8 medium-offset-2 large-6 large-offset-1 columns'>
+    <div class='small-12 medium-8 medium-offset-2 large-6 large-offset-1 login__page columns'>
       <form class="lh-copy" data-members-form="signin">
         <h1>Login</h1>
-        <p class='lato'>Enter your email address for full access to the membership section.</p>
+        <p>Enter your email address for full access to the membership section.</p>
         <div class="signin-box">
           <input class='' data-members-email type="email" placeholder="Your email address" required="true" autocomplete="false" />
           <button class="button btn--purple" type="submit">

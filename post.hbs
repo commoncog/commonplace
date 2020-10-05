@@ -4,13 +4,21 @@
 <div class='row'>
     <div class='small-12 medium-8 medium-offset-2 large-6 large-offset-1 columns'>
       <section class='post-page-header'>
+      {{#has visibility="members"}}<span class='members-flare'><img src='{{asset "img/lock.svg"}}'> Members only</span>&nbsp;&nbsp;{{/has}}
       <span class='post-page-header__tag-bar'>{{tags separator=", "}}</span>
       <h1 class="post-page-header__title">{{title}}</h1>
       <div class='post-page-header__metadata-bar'>{{t "By"}} {{authors}}</div>
       {{#if feature_image}}<img src='{{img_url feature_image}}' alt='{{t "Feature image for"}} {{title}}'/>{{/if}}
       </section>
       <section class='post-page-content'>
-      {{ content }}
+      {{#if access}}
+        {{ content }}
+      {{else}}
+        {{#if custom_excerpt}}
+          <p class='post__custom-excerpt'>{{custom_excerpt}}</p>
+        {{/if}}
+        {{> members-only}}
+      {{/if}}
       </section>
       <section class='post-page__date_info'>
       Originally published <time class='' datetime="{{date published_at format='DD MMMM YYYY'}}">{{date published_at format="DD MMMM YYYY"}}, last updated <time class='' datetime="{{date updated_at format='DD MMMM YYYY'}}">{{date updated_at format="DD MMMM YYYY"}}</time>.
