@@ -23,47 +23,64 @@
       <section class='post-page__date_info'>
       Originally published <time class='' datetime="{{date published_at format='DD MMMM YYYY'}}">{{date published_at format="DD MMMM YYYY"}}, last updated <time class='' datetime="{{date updated_at format='DD MMMM YYYY'}}">{{date updated_at format="DD MMMM YYYY"}}</time>.
       </section>
+      <div class='subscribe-box'>
+        {{> subscribebox}}
+      </div>
     </div>
   <div class='small-12 medium-8 medium-offset-2 large-3 large-offset-1 end columns'>
     {{> "sidebar"}}
   </div>
 </div>
 <div class='row post-page__bottom-meta'>
-  <div class='small-12 medium-8 medium-offset-2 large-4 large-offset-1 large-push-7 columns paddingless'>
-    <div class='subscribe-box'>
-      {{> subscribebox}}
-    </div>
-    <div>&nbsp;&nbsp;</div>
-  </div>
-  <div class='small-12 medium-8 medium-offset-2 large-6 large-pull-5 large-offset-1 end columns'>
-    <div class='row small-uncollapse medium-collapse large-collapse'>
+  <div class='small-12 medium-8 medium-offset-2 large-4 large-offset-1 large-push-7 columns'>
+    <div class='row small-uncollapse'>
       {{#if primary_tag}}
         {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{comment_id}}" limit="3" as |related_posts|}}
-        <div class='small-12 columns post-page__related'>
-          <h2 class='post-page__related__heading'>{{t "More in"}} {{../primary_tag.name}}:</h2>
-          <ul class='post-page__related__ul'>
-          {{#foreach related_posts}}
-            <li class='post-page__related__li'><a class='post-page__related__a' href='{{url}}'>{{title}}</a></li>
-          {{/foreach}}
-          </ul>
-        </div>
+          <div class='small-12 columns post-page__related'>
+            <h2 class='post-page__related__heading'>{{t "More in"}} {{../primary_tag.name}}:</h2>
+            <ul class='post-page__related__ul'>
+              {{#foreach related_posts}}
+                <li class='post-page__related__li'><a class='post-page__related__a' href='{{url}}'>{{title}}</a></li>
+              {{/foreach}}
+            </ul>
+          </div>
         {{/get}}
       {{/if}}
     </div><!--row-->
-    <div class='row'>
-      {{#prev_post}}
+    <div>&nbsp;&nbsp;</div>
+  </div>
+  <div class='small-12 medium-8 medium-offset-2 large-6 large-pull-5 large-offset-1 end columns'>
+    <div class='row small-uncollapse post-page__next-prev'>
       <div class='small-12 medium-6 columns post-page__next-prev--left'>
-        <h4 class='post-page__next-prev__subheading'>{{t "Previous post"}}</h4>
-        <h3 class='post-page__next-prev__heading'><a class='page-post__next-prev__a' href="{{url}}">&larr; {{title}}</a></h3>
-      </div>
+      {{#prev_post}}
+          <h4 class='post-page__next-prev__subheading'>{{t "Previous post"}}</h4>
+          <h3 class='post-page__next-prev__heading'><a class='page-post__next-prev__a' href="{{url}}">&larr; {{title}}</a></h3>
       {{/prev_post}}
-      {{#next_post}}
-      <div class='small-12 medium-6 columns post-page__next-prev--right'>
-        <h4 class='post-page__next-prev__subheading'>{{t "Next post"}}</h4>
-        <h3 class='post-page__next-prev__heading'><a class='page-post__next-prev__a' href="{{url}}">{{title}} &rarr;</a></h3>
       </div>
+      <div class='small-12 medium-6 columns post-page__next-prev--right'>
+      {{#next_post}}
+          <h4 class='post-page__next-prev__subheading'>{{t "Next post"}}</h4>
+          <h3 class='post-page__next-prev__heading'><a class='page-post__next-prev__a' href="{{url}}">{{title}} &rarr;</a></h3>
       {{/next_post}}
+      </div>
     </div><!--row-->
+    <div class='row small-uncollapse post-page__comments'>
+      <div class='small-12 columns'>
+        <h3 class='post-page__comments__subheading'>Member Comments</h3>
+        <div id='discourse-comments'></div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      DiscourseEmbed = { discourseUrl: 'https://forum.commoncog.com/',
+discourseEmbedUrl: '{{url absolute="true"}}' };
+
+(function() {
+var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+})();
+</script>
   </div>
 </div>
 {{/post}}

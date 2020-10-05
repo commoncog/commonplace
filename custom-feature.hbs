@@ -16,15 +16,12 @@
       <section class='post-page__date_info'>
       Originally published <time class='' datetime="{{date published_at format='DD MMMM YYYY'}}">{{date published_at format="DD MMMM YYYY"}}, last updated <time class='' datetime="{{date updated_at format='DD MMMM YYYY'}}">{{date updated_at format="DD MMMM YYYY"}}</time>.
       </section>
+      <div class="subscribe-box">
+        {{> subscribebox}}
+      </div>
     </div>
-  <div class='small-12 medium-8 medium-offset-2 end columns'>
-    {{> sidebar}}
-  </div>
 </div>
 <div class='row post-page__bottom-meta'>
-  <div class='small-12 medium-8 medium-offset-2 columns subscribe-box'>
-    {{> subscribebox}}
-  </div>
   {{#is "post"}}
   <div class='small-12 medium-8 medium-offset-2 end columns'>
     <div class='row small-uncollapse medium-collapse'>
@@ -41,7 +38,7 @@
         {{/get}}
       {{/if}}
     </div><!--row-->
-    <div class='row small-uncollapse'>
+    <div class='row small-uncollapse post-page__next-prev'>
       <div class='small-12 medium-6 columns post-page__next-prev--left'>
       {{#prev_post}}
         <h4 class='post-page__next-prev__subheading'>{{t "Previous post"}}</h4>
@@ -56,7 +53,31 @@
       </div>
     </div><!--row-->
   </div>
-  {{/is}}
+{{/is}}
+</div>
+<div class='row small-uncollapse post-page__comments'>
+  <div class='small-12 medium-8 medium-offset-2 end columns'>
+    <h3 class='post-page__comments__subheading'>Member Comments</h3>
+    <div id='discourse-comments'></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://forum.commoncog.com/',
+discourseEmbedUrl: '{{url absolute="true"}}' };
+
+(function() {
+var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+})();
+</script>
+
+<div class='row'>
+  <div class='small-12 medium-8 medium-offset-2 end columns'>
+  <br/><br/>
+    {{> sidebar}}
+  </div>
 </div>
 {{/post}}
 {{> footer}}

@@ -312,14 +312,14 @@ h1, h2, h3, h4, h5 {
   padding-right: 1rem;
   padding-left: 1rem;
   padding-bottom: 0.5rem;
-  margin-bottom: 2rem;
 }
 .subscribe-box__heading {
   font-size: 1.5rem;
+  margin-bottom: 1rem;
   line-height: 110%;
 }
 .subscribe-box__p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 120%;
 }
 
@@ -658,6 +658,11 @@ h1, h2, h3, h4, h5 {
   padding-bottom: 5px;
   border-bottom: 1px dotted $medium-gray;
 }
+.post-page__next-prev {
+  border-bottom: 1px dotted $medium-gray;
+  @include breakpoint(large up) {
+  }
+}
 @mixin post-page-nextprev {
   min-height: 6rem;
 }
@@ -682,6 +687,15 @@ h1, h2, h3, h4, h5 {
   text-transform: uppercase;
   font: 0.8rem $sanserif;
   color: $dark-gray;
+}
+
+.post-page__comments {
+  margin-top: 2rem;
+}
+.post-page__comments__subheading {
+  text-transform: uppercase;
+  font: 0.9rem $sanserif;
+  color: #555;
 }
 
 // Post custom types
@@ -960,3 +974,7 @@ form[data-members-form].loading .button-loader {
   }
 }
 
+/* Discourse Comments */
+#discourse-comments {
+  margin-top: 1rem;
+}
