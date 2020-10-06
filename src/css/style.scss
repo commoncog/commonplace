@@ -333,6 +333,13 @@ h1, h2, h3, h4, h5 {
   font-style: italic;
   color: $dark-gray;
   display: inline-block;
+  font-size: 1.4rem;
+}
+.tag-index__desc-heading--guides {
+  font-style: italic;
+  color: #555;
+  display: inline-block;
+  font-size: 1.4rem;
 }
 .author-index__bio {
   font-style: italic;
@@ -934,7 +941,6 @@ form[data-members-form].loading .button-loader {
 }
 
 .post__custom-excerpt {
-  font-style: italic;
 }
 .post__members-only-box {
   background-color: #fffced;
