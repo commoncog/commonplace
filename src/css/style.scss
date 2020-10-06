@@ -992,7 +992,8 @@ form[data-members-form].loading .button-loader {
 .blue-box {
   border: 1px solid $darkblue;
   background-color: $fadedblue;
-  padding: 1.5rem 1rem 0.5rem;
+  padding: 1.5rem 1rem;
+  margin: 1rem 0;
   p {
     font-size: 1.1rem;
   }
