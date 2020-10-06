@@ -22,7 +22,7 @@
       {{/if}}
       </section>
       <section class='post-page__date_info'>
-      Originally published <time class='' datetime="{{date published_at format='DD MMMM YYYY'}}">{{date published_at format="DD MMMM YYYY"}}, last updated <time class='' datetime="{{date updated_at format='DD MMMM YYYY'}}">{{date updated_at format="DD MMMM YYYY"}}</time>.
+      Originally published <time class='' datetime="{{date published_at format='DD MMMM YYYY'}}">{{date published_at format="DD MMMM YYYY"}}</time>, last updated <time class='' datetime="{{date updated_at format='DD MMMM YYYY'}}">{{date updated_at format="DD MMMM YYYY"}}</time>.
       </section>
       <div class='subscribe-box'>
         {{> subscribebox}} 
@@ -66,6 +66,7 @@
         </div>
       </div><!--row-->
       {{^has tag="#guide, #as"}}
+        {{#has visibility="public"}}
         <div class='row small-uncollapse post-page__comments'>
           <div class='small-12 columns'>
             <h3 class='post-page__comments__subheading'>Member Comments</h3>
@@ -75,16 +76,38 @@
 
         <script type="text/javascript">
           DiscourseEmbed = { discourseUrl: 'https://forum.commoncog.com/',
-discourseReferrerPolicy: 'no-referrer-when-downgrade',
-discourseEmbedUrl: '{{url absolute="true"}}' };
+            discourseReferrerPolicy: 'no-referrer-when-downgrade',
+            discourseEmbedUrl: '{{url absolute="true"}}' };
+            
+            (function() {
+            var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+            d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+            })();
+        </script>
+        {{else}}
+        {{#if @member}}
+          <div class='row small-uncollapse post-page__comments'>
+            <div class='small-12 columns'>
+              <h3 class='post-page__comments__subheading'>Member Comments</h3>
+              <div id='discourse-comments'></div>
+            </div>
+          </div>
 
-(function() {
-var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
-d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
-})();
-</script>
-  {{/has}}
+        <script type="text/javascript">
+          DiscourseEmbed = { discourseUrl: 'https://forum.commoncog.com/',
+            discourseReferrerPolicy: 'no-referrer-when-downgrade',
+            discourseEmbedUrl: '{{url absolute="true"}}' };
+            
+            (function() {
+            var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+            d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+            })();
+        </script>
+        {{/if}}
+        {{/has}}
+      {{/has}}
 </div>
 </div>
 <div class='row'>

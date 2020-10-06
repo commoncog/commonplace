@@ -1,4 +1,4 @@
-  <nav class='sidebar__nav sidebar__members'>
+<nav class='sidebar__nav sidebar__members{{#if @member}}--logged-in{{/if}}'>
   <h2 class='sidebar__heading'>Members</h2>
   {{#if @member}}
     <p class='sidebar__desc_p'>Welcome, {{@member.name}}</p>
