@@ -41,6 +41,7 @@
 $yellowbg: #fffced;
 $orange: #f2e6b1;
 $fadedblue: #eff3fc;
+$fadedpink: #fddbdd;
 $darkblue: #2351b9;
 $fadedpurple: #f7eef4;
 $fadedmagenta: #edd6e5;
@@ -49,6 +50,11 @@ $deeperpurple: #472089;
 $superdarkpurple: #3c1053;
 $error: #FFDFDF;
 $success: #98c22e;
+
+
+$bluegradient: linear-gradient(to bottom right,#eff3fc,#f2fcfe);
+$pinkgradient: linear-gradient(to bottom left,#fffced,#fccbce);
+$greengradient: linear-gradient(to bottom left,#cefff6,#b0e4d3);
 
 $gradient: linear-gradient(to bottom right,#61045F,#753a88);
 $footergradient: linear-gradient(to bottom left,$yellowbg,$fadedmagenta);
@@ -760,7 +766,10 @@ h1, h2, h3, h4, h5 {
 }
 
 .sidebar__members {
-  /*background-color: #fffced;*/
+  padding: 0.5rem 0;
+}
+.sidebar__members--logged-in {
+  background-color: #fffced;
   padding: 0.5rem 0;
 }
 
@@ -988,7 +997,7 @@ form[data-members-form].loading .button-loader {
   margin-top: 1rem;
 }
 
-/* Action script box */
+/* Action sheet box */
 .blue-box {
   border: 1px solid $darkblue;
   background-color: $fadedblue;
@@ -1014,5 +1023,41 @@ form[data-members-form].loading .button-loader {
       color: #0a0a0a !important;
     }
   }
+}
+/* Guide book box */
+.red-guide-box {
+  background: $fadedpink;
+  background: $pinkgradient;
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.blue-guide-box {
+  background: $fadedblue;
+  background: $bluegradient;
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.green-guide-box {
+  background: $fadedblue;
+  background: $greengradient;
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.cf:before,
+.cf:after   { content: " "; display: table; }
+.cf:after   { clear: both; }
+.cf         { *zoom: 1; }
+
+.guide-box__img {
+  box-shadow: 2px 2px 4px 2px rgba(0,0,0,.2);
 }
 
