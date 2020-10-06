@@ -16,7 +16,7 @@
   <section class='small-12 medium-3 columns'>
   <h2 class='footer__heading'>{{t "Latest"}}</h2>
   <ul class='footer__latest'>
-    {{#get "posts" limit="3" filter="tags:-[books]" as |latest_posts|}}
+    {{#get "posts" limit="3" filter="tags:-[books,hash-guide,hash-as]+visibility:public" as |latest_posts|}}
     {{#foreach latest_posts}}
       <li class='footer__latest__li'><a href="{{url}}" class="footer__latest__li__a" title="{{title}}">{{title}}</a></li>
     {{/foreach}}

@@ -2,12 +2,28 @@ routes:
   /signup/: members/signup
   /login/: members/login
   /account/: members/account
+  /members/:
+    controller: channel
+    template: members/index
+    filter: visibility:-public+tag:-hash-guide+tag:-hash-as
+    data: page.members-meta
 
 collections:
   /:
     permalink: /{slug}/
     template:
       - index
+    filter: tag:-hash-guide+tag:-hash-as
+  /a/:
+    permalink: /a/{slug}/
+    template: members/as-index
+    filter: 'tag:hash-as'
+    data: page.actionscripts-meta
+  /g/:
+    permalink: /g/{slug}/
+    template: members/guides-index
+    filter: 'tag:hash-guide'
+    data: page.guides-meta
 
 taxonomies:
   tag: /tag/{slug}/

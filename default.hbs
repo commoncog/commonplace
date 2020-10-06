@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html lang="{{@site.lang}}">
 <head>
-    <title>{{meta_title}}</title>
+  <title>
+    {{#is "home"}}
+      {{@site.title}}
+    {{else}}
+      {{#is "tag, author"}}
+        {{meta_title}}
+      {{else}}
+        {{meta_title}} - {{@site.title}}
+      {{/is}}
+    {{/is}}
+  </title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="HandheldFriendly" content="True" />

@@ -1,5 +1,4 @@
 {{!< default}}
-
 {{> header}}
 <div class='row'>
   <div class='small-12 medium-8 medium-offset-2 large-6 large-offset-1 columns'>
@@ -8,22 +7,11 @@
         <h1>{{name}}</h1>
         <h3 class="tag-index__desc-heading">{{description}}</h3>
       </div>
-    {{/tag}}{{/is}}
-    {{#is "author"}}{{#primary_author}}
-      <div class='index__meta_box'>
-        {{#if profile_image}}<img class='author-index__profile-img' src='{{img_url profile_image}}' alt="{{name}}"/>{{/if}}
-        <h1>{{name}}</h1>
-        <div class='author-index__links-bar'>
-          {{#if location}}<i class='fas fa-map-marker'></i>&nbsp;&nbsp;{{location}} {{/if}}
-          {{#if website}}&middot; <a href='{{website}}' target="_blank" rel="noopener">{{website}}</a>{{/if}} 
-          {{#if twitter}}&middot;&nbsp;&nbsp;<a href='{{twitter_url twitter}}' target="_blank" rel="noopener"><i class='fab fa-twitter'></i></a>&nbsp;&nbsp;{{/if}}
-          {{#if facebook}}&middot;&nbsp;&nbsp;<a href='{{facebook_url facebook}}' target="_blank" rel="noopener"><i class='fab fa-facebook'></i>&nbsp;&nbsp;</a>{{/if}}
-            &middot;&nbsp;&nbsp;<a href='https://feedly.com/i/subscription/feed/{{url absolute="true"}}rss/' target="_blank" rel="noopener"><i class='fas fa-rss'></i></a>
-      </div>
-        <p class='author-index__bio'>{{bio}}</p>
-      </div>
-    {{/primary_author}}{{/is}}
-    {{> loop}}
+    {{/tag}}
+      {{> loopall}}
+    {{else}}
+      {{> loop}}
+  {{/is}}
   </div>
   <div class='small-12 medium-8 medium-offset-2 large-3 large-offset-1 end columns'>
     {{> sidebar}}

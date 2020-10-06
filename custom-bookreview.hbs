@@ -4,6 +4,7 @@
   {{#post}}
     <div class='small-12 medium-8 medium-offset-2 large-6 large-offset-1 columns'>
       <section class='post-page-header'>
+      {{#has visibility="paid"}}<span class='members-flare'><img src='{{asset "img/lock.svg"}}'> Members only</span>&nbsp;&nbsp;{{/has}}
       {{#has visibility="members"}}<span class='members-flare'><img src='{{asset "img/lock.svg"}}'> Members only</span>&nbsp;&nbsp;{{/has}}
       <span class='post-page-header__tag-bar'>{{tags separator=", "}}</span>
       <h1 class="post-page-header__title">{{title}}</h1>

@@ -1,0 +1,28 @@
+{{#foreach posts visibility="all"}}
+<article class="{{post_class}} post">
+  <div class='row'>
+    {{#if feature_image}}
+    <section class='small-4 columns'>
+    <a href='{{url}}'><img class="post-header__feature-img--secondary" src="{{img_url feature_image}}" alt="{{name}}"/></a>
+    </section>
+    <section class='small-8 columns'>
+			<h2 class="post-header__title--secondary"><a class="post-header__title-link" href="{{url}}">{{{title}}}</a></h2>
+      <p class="post__excerpt__p">{{excerpt words="15"}}{{#unless custom_excerpt}}&hellip;{{/unless}}</p>
+      {{#has visibility="paid"}}<span class='members-flare'><img src='{{asset "img/lock.svg"}}'> Members only</span>&nbsp;&nbsp;{{/has}}
+      {{#has visibility="members"}}<span class='members-flare'><img src='{{asset "img/lock.svg"}}'> Members only</span>&nbsp;&nbsp;{{/has}}
+    </section>
+    {{ else }}
+    <section class='small-12 columns'>
+			<h2 class="post-header__title--secondary"><a class="post-header__title-link" href="{{url}}">{{{title}}}</a></h2>
+      <p class="post__excerpt__p">{{excerpt words="15"}}{{#unless custom_excerpt}}&hellip;{{/unless}}</p>
+      {{#has visibility="paid"}}<span class='members-flare'><img src='{{asset "img/lock.svg"}}'> Members only</span>&nbsp;&nbsp;{{/has}}
+      {{#has visibility="members"}}<span class='members-flare'><img src='{{asset "img/lock.svg"}}'> Members only</span>&nbsp;&nbsp;{{/has}}
+    </section>
+    {{/if}}
+  </div>
+  <hr class='home__hr {{#if @last}}show-for-large{{/if}}'/>
+</article>
+{{/foreach}}
+
+{{pagination}}
+
