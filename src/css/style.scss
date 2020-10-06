@@ -404,8 +404,11 @@ h1, h2, h3, h4, h5 {
 }
 
 // Post Page styles
-.post-page-header {
+.post-page-header--fi {
   margin-bottom: 2rem;
+}
+.post-page-header {
+  margin-bottom: 1rem;
 }
 .post-page-header__title {
   margin-top: 0.5rem;
@@ -757,8 +760,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .sidebar__members {
-  background-color: #fffced;
-  padding: 0.5rem 0.1rem;
+  /*background-color: #fffced;*/
+  padding: 0.5rem 0;
 }
 
 @mixin sidebar-li-styles {
@@ -984,3 +987,31 @@ form[data-members-form].loading .button-loader {
 #discourse-comments {
   margin-top: 1rem;
 }
+
+/* Action script box */
+.blue-box {
+  border: 1px solid $darkblue;
+  background-color: $fadedblue;
+  padding: 1.5rem 1rem 0.5rem;
+  p {
+    font-size: 1.1rem;
+  }
+  a {
+    color: #0a0a0a;
+    &:hover {
+      color: #1779ba !important;
+    }
+  }
+}
+.blue-box__heading {
+  margin-bottom: 0.8rem;
+}
+.blue-box__icon {
+  text-align: center;
+  a {
+    &:hover {
+      color: #0a0a0a !important;
+    }
+  }
+}
+

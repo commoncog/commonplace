@@ -3,12 +3,12 @@
 {{#post}}
   <div class='row'>
     <div class='small-12 medium-8 medium-offset-2 large-6 large-offset-1 columns'>
-      <section class='post-page-header'>
+      <section class='post-page-header{{#if feature_image}}--fi{{/if}}'>
       {{#has visibility="paid"}}<span class='members-flare'><img src='{{asset "img/lock.svg"}}'> Members only</span>&nbsp;&nbsp;{{/has}}
       {{#has visibility="members"}}<span class='members-flare'><img src='{{asset "img/lock.svg"}}'> Members only</span>&nbsp;&nbsp;{{/has}}
       <span class='post-page-header__tag-bar'>{{tags separator=", "}}</span>
       <h1 class="post-page-header__title">{{title}}</h1>
-      <div class='post-page-header__metadata-bar'>{{t "By"}} {{authors}}</div>
+      {{^has tag='#as,#guide'}}<div class='post-page-header__metadata-bar'>{{t "By"}} {{authors}}</div>{{/has}}
       {{#if feature_image}}<img src='{{img_url feature_image}}' alt='{{t "Feature image for"}} {{title}}'/>{{/if}}
       </section>
       <section class='post-page-content'>

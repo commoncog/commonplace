@@ -18,7 +18,7 @@ collections:
     permalink: /a/{slug}/
     template: members/as-index
     filter: 'tag:hash-as'
-    data: page.actionscripts-meta
+    data: page.actionsheets-meta
   /g/:
     permalink: /g/{slug}/
     template: members/guides-index
