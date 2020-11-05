@@ -52,6 +52,9 @@ $deeppurple: #5D2AB2;
 $deeperpurple: #472089;
 $superdarkpurple: #3c1053;
 
+$mfsred: #ac0b14;
+$fadedred: #f7eef4;
+
 $gradient: linear-gradient(to bottom right,#61045F,#753a88);
 $footergradient: linear-gradient(to bottom left,$yellowbg,$fadedmagenta);
 
@@ -776,3 +779,13 @@ h1, h2, h3, h4, h5 {
 }
 
 
+/* Tachyons shit */
+.mfs-red {
+  color: $mfsred;
+}
+.bg-mfs-red {
+  background-color: $mfsred;
+}
+.bg-faded-red {
+  background-color: $fadedred;
+}
