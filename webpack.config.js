@@ -83,7 +83,7 @@ var config = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css?sourceMap")
+        loader: ExtractTextPlugin.extract(["css-loader"])
       }
     ]
   },
