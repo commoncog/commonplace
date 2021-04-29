@@ -3,7 +3,8 @@
     "description": "A beautiful, free, standards-compliant theme, specifically designed for content marketing.",
     "version": "1.4.3",
     "engines": {
-        "ghost": ">=1.0.0"
+        "ghost": ">=1.0.0",
+        "ghost-api": "v4"
     },
     "license": "MIT",
     "author": {

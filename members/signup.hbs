@@ -33,13 +33,13 @@
   <div class="row">
     <div class='small-12 medium-4 medium-offset-2 offer__monthly-column columns'>
       <h2 class='offer__plan-header'>Monthly</h2>
-      <p><span class='upper'>{{@price.currency}}</span>{{@price.currency_symbol}}{{@price.monthly}} a month</p>
+      <p><span class='upper'>{{@price.currency}}</span>{{price currency=currency}}{{@price.monthly}} a month</p>
       <a href="javascript:" data-members-plan="Monthly" data-members-success="{{@site.url}}/payment-success/" data-members-cancel="{{@site.url}}/signup/" class="button large offer__btn">Subscribe Monthly <em>(<span class='upper'>{{@price.currency}}</span>{{@price.currency_symbol}}{{@price.monthly}}/mo)</em></a>
     </div>
     <div class="small-12 medium-4 end columns">
       <h2 class='offer__plan-header'>Yearly</h2>
       <h3 class='offer__price-header'></h3>
-      <p><span class='upper'>{{@price.currency}}</span>{{@price.currency_symbol}}{{@price.yearly}} a year ($6.67 a month)</p>
+      <p><span class='upper'>{{@price.currency}}</span>{{price currency=currency}}{{@price.yearly}} a year ($6.67 a month)</p>
       <a href="javascript:" data-members-plan="Yearly" data-members-success="{{@site.url}}/payment-success/" data-members-cancel="{{@site.url}}/signup/" class="button large offer__btn">Subscribe Yearly <em>(<span class='upper'>{{@price.currency}}</span>{{@price.currency_symbol}}{{@price.yearly}}/yr)</em></a>
     </div>
   </div>
