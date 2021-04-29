@@ -20,7 +20,7 @@
           <div class='small-12 medium-6 columns'>
             <h4>Current Plan</h4>
             {{#if @member.paid}}
-              <p>{{price currency=currency}}{{price plan.amount}}/{{plan.interval}}</p>
+              <p>{{price currency=plan.currency}}{{price plan.amount}}/{{plan.interval}}</p>
               <p><strong>{{#if cancel_at_period_end}}Expires{{else}}Next bill date{{/if}}:</strong> {{date current_period_end format="DD MMM YYYY"}}</p>
             {{else}}
               <p>Invited member</p>
