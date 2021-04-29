@@ -1,7 +1,7 @@
 {
     "name": "commonplace-ccmcg",
     "description": "A beautiful, free, standards-compliant theme, specifically designed for content marketing.",
-    "version": "1.4.7",
+    "version": "1.4.8",
     "engines": {
         "ghost": ">=1.0.0",
         "ghost-api": "v4"
