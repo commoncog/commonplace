@@ -8,11 +8,15 @@
     <section class='small-8 columns'>
 			<h2 class="post-header__title--secondary"><a class="post-header__title-link" href="{{url}}">{{{title}}}</a></h2>
       <p class="post__excerpt__p">{{excerpt words="15"}}{{#unless custom_excerpt}}&hellip;{{/unless}}</p>
+      {{#has visibility="paid"}}<span class='members-flare'><img src='{{asset "img/lock.svg"}}'> Members only</span>&nbsp;&nbsp;{{/has}}
+      {{#has visibility="members"}}<span class='members-flare'><img src='{{asset "img/lock.svg"}}'> Members only</span>&nbsp;&nbsp;{{/has}}
     </section>
     {{ else }}
     <section class='small-12 columns'>
 			<h2 class="post-header__title--secondary"><a class="post-header__title-link" href="{{url}}">{{{title}}}</a></h2>
       <p class="post__excerpt__p">{{excerpt words="15"}}{{#unless custom_excerpt}}&hellip;{{/unless}}</p>
+      {{#has visibility="paid"}}<span class='members-flare'><img src='{{asset "img/lock.svg"}}'> Members only</span>&nbsp;&nbsp;{{/has}}
+      {{#has visibility="members"}}<span class='members-flare'><img src='{{asset "img/lock.svg"}}'> Members only</span>&nbsp;&nbsp;{{/has}}
     </section>
     {{/if}}
   </div>
