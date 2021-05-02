@@ -930,11 +930,8 @@ form[data-members-form].loading .button-loader {
   color: $deeperpurple;
   text-align: center;
 }
-.offer__monthly-column {
-  border-right: 1px solid #ddd;
-  @include breakpoint(medium up) {
-    text-align: right;
-  }
+.offer__yearly-column {
+  text-align: center;
 }
 .upper { text-transform: uppercase; }
 
