@@ -14,6 +14,7 @@
          url('../fonts/Calluna.ttf') format('truetype'); 
   font-weight: normal; 
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Calluna';
@@ -24,6 +25,7 @@
          url('../fonts/Calluna-It-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
+    font-display: swap;
 }
 @font-face {
   font-family: 'Calluna';
@@ -34,8 +36,9 @@
          url('../fonts/Calluna-Bold-webfont.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
 }
-@font-face {font-family: 'Lato';src: url('../fonts/Lato.eot');src: url('../fonts/Lato.eot?#iefix') format('embedded-opentype'),url('../fonts/Lato.woff2') format('woff2'),url('../fonts/Lato.woff') format('woff'),url('../fonts/Lato.ttf') format('truetype');}
+@font-face {font-family: 'Lato';src: url('../fonts/Lato.eot');src: url('../fonts/Lato.eot?#iefix') format('embedded-opentype'),url('../fonts/Lato.woff2') format('woff2'),url('../fonts/Lato.woff') format('woff'),url('../fonts/Lato.ttf') format('truetype');font-display:swap;}
 
 // Variables
 $yellowbg: #fffced;
