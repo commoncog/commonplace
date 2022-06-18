@@ -41,8 +41,12 @@
     <div class="small-12 offer__yearly-column columns">
       <h2 class='offer__plan-header'>Yearly</h2>
       <h3 class='offer__price-header'></h3>
-      <p><span class='upper'>{{@price.currency}}</span>{{price currency=@price.currency}}{{@price.yearly}} a year ($12.50 a month)</p>
-      <a href="javascript:" data-members-plan="Yearly" data-members-success="{{@site.url}}/payment-success/" data-members-cancel="{{@site.url}}/signup/" class="button large offer__btn">Subscribe Yearly <em>(<span class='upper'>{{@price.currency}}</span>{{price currency=@price.currency}}{{@price.yearly}}/yr)</em></a>
+      {{#get "tiers" include="yearly_price" limit="all" as |tiers|}}
+        {{#foreach tiers}}
+          <p>USD {{ price yearly_price currency=currency }} a year ($12.50 a month)</p>
+          <a href="javascript:" data-portal="/signup/{{ id }}/yearly" class="button large offer__btn">Subscribe Yearly <em>(<span class='upper'>USD</span>{{ price yearly_price currency=currency }}/yr)</em></a>
+        {{/foreach}}
+      {{/get}}
     </div>
   </div>
   <div class='row'>
@@ -74,8 +78,12 @@
     <div class="small-12 offer__yearly-column columns">
       <h2 class='offer__plan-header'>Yearly</h2>
       <h3 class='offer__price-header'></h3>
-      <p><span class='upper'>{{@price.currency}}</span>{{price currency=@price.currency}}{{@price.yearly}} a year ($12.50 a month)</p>
-      <a href="javascript:" data-members-plan="Yearly" data-members-success="{{@site.url}}/payment-success/" data-members-cancel="{{@site.url}}/signup/" class="button large offer__btn">Subscribe Yearly <em>(<span class='upper'>{{@price.currency}}</span>{{price currency=@price.currency}}{{@price.yearly}}/yr)</em></a>
+      {{#get "tiers" include="yearly_price" limit="all" as |tiers|}}
+        {{#foreach tiers}}
+          <p>USD {{ price yearly_price currency=currency }} a year ($12.50 a month)</p>
+          <a href="javascript:" data-portal="/signup/{{ id }}/yearly" class="button large offer__btn">Subscribe Yearly <em>(<span class='upper'>USD</span>{{ price yearly_price currency=currency }}/yr)</em></a>
+        {{/foreach}}
+      {{/get}}
     </div>
   </div>
   <div class='row'>
