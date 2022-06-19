@@ -43,8 +43,8 @@
       <h3 class='offer__price-header'></h3>
       {{#get "tiers" include="yearly_price" limit="all" as |tiers|}}
         {{#foreach tiers}}
-          <p>USD {{ price yearly_price currency=currency }} a year ($12.50 a month)</p>
-          <a href="javascript:" data-portal="/signup/{{ id }}/yearly" class="button large offer__btn">Subscribe Yearly <em>(<span class='upper'>USD</span>{{ price yearly_price currency=currency }}/yr)</em></a>
+          <p><span class='upper'>{{currency}}</span> {{ price yearly_price currency=currency }} a year ($12.50 a month)</p>
+          <a href="javascript:" data-portal="/signup/{{ id }}/yearly" class="button large offer__btn">Subscribe Yearly <em>(<span class='upper'>{{ currency }}</span> {{ price yearly_price currency=currency }}/yr)</em></a>
         {{/foreach}}
       {{/get}}
     </div>
@@ -80,8 +80,8 @@
       <h3 class='offer__price-header'></h3>
       {{#get "tiers" include="yearly_price" limit="all" as |tiers|}}
         {{#foreach tiers}}
-          <p>USD {{ price yearly_price currency=currency }} a year ($12.50 a month)</p>
-          <a href="javascript:" data-portal="/signup/{{ id }}/yearly" class="button large offer__btn">Subscribe Yearly <em>(<span class='upper'>USD</span>{{ price yearly_price currency=currency }}/yr)</em></a>
+          <p><span class='upper'>{{ currency }}</span> {{ price yearly_price currency=currency }} a year ($12.50 a month)</p>
+          <a href="javascript:" data-portal="/signup/{{ id }}/yearly" class="button large offer__btn">Subscribe Yearly <em>(<span class='upper'>{{ currency }}</span> {{ price yearly_price currency=currency }}/yr)</em></a>
         {{/foreach}}
       {{/get}}
     </div>
